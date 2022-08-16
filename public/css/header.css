@@ -1,0 +1,27 @@
+header {
+    background-color: #4E579C;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+header img {
+    height: 103px;
+    width: 200px;
+    object-fit: cover;
+    margin-left: 5vw;
+}
+header nav ul{
+    display: flex;
+    margin-right: 5vw;
+    margin-top: 12px;
+    height: 80px;
+    width: 60vw;
+    justify-content: space-between;
+    text-align: center;
+}
+header nav ul li {
+    font-family: 'Oswald', sans-serif; 
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    padding-top: 20px;
+}

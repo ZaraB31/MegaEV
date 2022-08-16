@@ -1,0 +1,28 @@
+footer {
+    background-color: #4E579C;
+    color: white;
+}
+footer section {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer section article {
+    width: fit-content;
+    margin: 1%;
+}
+footer section article div {
+    display: flex;
+    flex-wrap: wrap;
+}
+footer section article div ul {
+    padding-right: 25px;
+}
+footer li {
+    font-size: 20px;
+}
+footer p {
+    font-size: 16px;
+}
