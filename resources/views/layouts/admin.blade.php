@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        @include('include.navigation')
+        @include('includes.navigation')
     </header>
     <main>
         @yield('content')

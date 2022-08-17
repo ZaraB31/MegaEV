@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\ViewController::class, 'home']);
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
