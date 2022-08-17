@@ -12,7 +12,7 @@ header nav ul {
     padding: 0;
     margin: 0;
 }
-header nav ul li {
+header nav ul a li {
     list-style-type: none;
     padding: 30px 15px;
     font-family: 'Poppins', sans-serif;
@@ -22,7 +22,7 @@ header nav ul li:hover {
     cursor: pointer;
     background-color: #EF8B6E;
 }
-header nav ul li a {
+header nav ul a {
     color: white;
     text-decoration: none;
 }

@@ -1,12 +1,12 @@
 <nav>
     <ul>
-        <li><a href="/dashboard">Overview</a></li>
-        <li><a>Brands</a></li>
-        <li><a>Products</a></li>
-        <li><a>Case Studies</a></li>
-        <li><a>Articles</a></li>
-        <li><a>Article Tags</a></li>
-        <li><a>Enquiries</a></li>
-        <li><a>Gallery</a></li>
+        <a href="/dashboard"><li>Overview</li></a>
+        <a href="/brands"><li>Brands</li></a>
+        <a href="/products"><li>Products</li></a>
+        <a href="/caseStudies"><li>Case Studies</li></a>
+        <a href="/articles"><li>Articles</li></a>
+        <a href="/tags"><li>Article Tags</li></a>
+        <a href="/enquiries"><li>Enquiries</li></a>
+        <a href="/gallery"><li>Gallery</li></a>
     </ul>
 </nav>
