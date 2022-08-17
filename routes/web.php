@@ -19,12 +19,13 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\ViewController::class, 'home']);
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
 
-Route::get('/articles', [App\Http\Controllers\ArticleController::class, 'index']);
-Route::get('/tags', [App\Http\Controllers\TagController::class, 'index']);
-Route::get('/brands', [App\Http\Controllers\BrandController::class, 'index']);
-Route::get('/caseStudies', [App\Http\Controllers\StudyController::class, 'index']);
-Route::get('/enquiries', [App\Http\Controllers\EnquiryController::class, 'index']);
-Route::get('/gallery', [App\Http\Controllers\ImageController::class, 'index']);
-Route::get('/products', [App\Http\Controllers\ProductController::class, 'index']);
+Route::get('/admin/articles', [App\Http\Controllers\ArticleController::class, 'index']);
+Route::get('/admin/tags', [App\Http\Controllers\TagController::class, 'index']);
+Route::get('/admin/brands', [App\Http\Controllers\BrandController::class, 'index']);
+Route::get('/admin/caseStudies', [App\Http\Controllers\StudyController::class, 'index']);
+Route::get('/admin/enquiries', [App\Http\Controllers\EnquiryController::class, 'index']);
+Route::get('/admin/gallery', [App\Http\Controllers\ImageController::class, 'index']);
+Route::get('/admin/products', [App\Http\Controllers\ProductController::class, 'index']);
 
-Route::post('/brands', [App\Http\Controllers\BrandController::class, 'store'])->name('createBrand');
+Route::post('/admin/brands', [App\Http\Controllers\BrandController::class, 'store'])->name('createBrand');
+Route::get('/admin/brand/{id}', [App\Http\Controllers\BrandController::class, 'show']);

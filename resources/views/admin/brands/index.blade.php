@@ -9,12 +9,11 @@
         <tr>
             <th>Brand Name</th>
         </tr>
+        @foreach($brands as $brand)
         <tr>
-            <td>Example Name</td>
+            <td><a href="/admin/brand/{{$brand->id}}">{{ $brand->name }}  <i class="fa-solid fa-arrow-right-long"></i></a></td>
         </tr>
-        <tr>
-            <td>Example Name</td>
-        </tr>
+        @endforeach
     </table>
 </section>
 <section class="form">

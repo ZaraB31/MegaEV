@@ -7,6 +7,11 @@ use App\Models\Brand;
 
 class BrandController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -14,7 +19,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return view('admin/brands/index');
+        $brands = Brand::all()->sortBy('name');
+        return view('admin/brands/index', ['brands' => $brands]);
     }
 
     /**
@@ -36,5 +42,18 @@ class BrandController extends Controller
         Brand::create($input);
 
         return redirect('/brands');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Tender  $tender
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $brand = Brand::findOrFail($id);
+
+        return view('admin/brands/show', compact('brand'));
     }
 }

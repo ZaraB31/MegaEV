@@ -80,3 +80,21 @@ form input[type=submit]:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+
+.editButton, .deleteButton {
+    font-size: 17px;
+    padding: 8px 12px;
+    width: 15%;
+    border: none;
+}
+.editButton {
+    background-color: #95a1ae;
+}
+.deleteButton {
+    background-color: #EF8B6E;
+    float: right;
+}
+.editButton:hover, .deleteButton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
