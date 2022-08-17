@@ -14,9 +14,21 @@
 
     @foreach($brands as $brand)
         <div id="{{$brand->name}}" class="tabcontent" style="display:none;">
-            <h3>{{$brand->name}}</h3>
+            <h2>{{$brand->name}}</h2>
             <p>{{$brand->details}}</p>
             <p>Find out more: <a href="{{$brand->link}}">{{$brand->link}}</a></p>
+
+            <article>
+                @foreach($products as $product) 
+                @if($product->brand_id === $brand->id)
+                    <div>
+                        <h3>{{$product->name}}</h3>
+                        <p>{{$product->details}}</p>
+                        <p class="price"><span>Price Range:</span> {{$product->priceRange}}</p>
+                    </div>
+                @endif
+                @endforeach
+            </article>
         </div>
     @endforeach
 

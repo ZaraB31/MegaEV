@@ -69,9 +69,13 @@ main {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-}
-.tabcontent {
     animation: fadeEffect 1s;
+}
+.tabcontent article div .price{
+    text-align: right;
+}
+.price span {
+    font-weight: bold;
 }
 @keyframes fadeEffect {
     from {opacity: 0;}

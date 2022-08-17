@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use App\Models\Product;
 
 class ViewController extends Controller
 {
@@ -19,7 +20,8 @@ class ViewController extends Controller
     public function brandsIndex() 
     {
         $brands = Brand::all()->sortBy('name');
+        $products = Product::all()->sortBy('name');
 
-        return view('brands/index', ['brands' => $brands]);    
+        return view('brands/index', ['brands' => $brands, 'products' => $products]);    
     }
 }

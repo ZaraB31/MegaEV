@@ -16,8 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $brands = Brand::all();
-        $products = Product::all();
+        $brands = Brand::all()->sortBy('name');
+        $products = Product::all()->sortBy('name');
         return view('admin/products/index', ['brands' => $brands, 'products' => $products]);
     }
 
