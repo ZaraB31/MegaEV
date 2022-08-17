@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Brand;
 
 class ViewController extends Controller
 {
@@ -14,5 +15,11 @@ class ViewController extends Controller
     public function home()
     {
         return view('home');
+    }
+    public function brandsIndex() 
+    {
+        $brands = Brand::all();
+
+        return view('brands/index', ['brands' => $brands]);    
     }
 }

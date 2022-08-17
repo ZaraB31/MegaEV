@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="/js/tabOpen.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">    
     <script src="https://kit.fontawesome.com/7d0f299f51.js" crossorigin="anonymous"></script>
     <title>@yield('title')</title>

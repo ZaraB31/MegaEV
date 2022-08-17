@@ -8,5 +8,14 @@
         <a href="/admin/tags"><li>Article Tags</li></a>
         <a href="/admin/enquiries"><li>Enquiries</li></a>
         <a href="/admin/gallery"><li>Gallery</li></a>
+        <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+            <li>Logout</li>
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
     </ul>
 </nav>
