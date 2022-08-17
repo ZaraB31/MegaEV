@@ -32,3 +32,6 @@ Route::get('/admin/products', [App\Http\Controllers\ProductController::class, 'i
 
 Route::post('/admin/brands', [App\Http\Controllers\BrandController::class, 'store'])->name('createBrand');
 Route::get('/admin/brand/{id}', [App\Http\Controllers\BrandController::class, 'show']);
+
+Route::post('/admin/products', [App\Http\Controllers\ProductController::class, 'store'])->name('createProduct');
+Route::get('/admin/product/{id}', [App\Http\Controllers\ProductController::class, 'show']);

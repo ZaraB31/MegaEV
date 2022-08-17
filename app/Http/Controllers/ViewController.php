@@ -18,7 +18,7 @@ class ViewController extends Controller
     }
     public function brandsIndex() 
     {
-        $brands = Brand::all();
+        $brands = Brand::all()->sortBy('name');
 
         return view('brands/index', ['brands' => $brands]);    
     }

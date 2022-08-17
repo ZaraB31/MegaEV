@@ -41,7 +41,7 @@ class BrandController extends Controller
 
         Brand::create($input);
 
-        return redirect('/brands');
+        return redirect('/admin/brands');
     }
 
     /**
