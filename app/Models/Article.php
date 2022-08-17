@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name', 'content',
+    ];
+
+    public function image() {
+        return $this->belongsTo(ArticleImage::class);
+    }
 }

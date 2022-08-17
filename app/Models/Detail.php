@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Detail extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'address1', 'address2', 'address3', 'postcode', 'phone', 'email',
+    ];
 }

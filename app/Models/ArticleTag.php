@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class ArticleTag extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+      'article_id', 'tag_id',  
+    ];
+
+    public function article() {
+      return $this->hasMany(Article::class);
+    }
+
+    public function tag() {
+      return $this->hasMany(Tag::class);
+    }
 }

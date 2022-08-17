@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+      'tag',  
+    ];
+
+    public function article() {
+      return $this->belongsTo(article::class);
+    }
 }
