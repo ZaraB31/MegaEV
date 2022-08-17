@@ -26,3 +26,5 @@ Route::get('/caseStudies', [App\Http\Controllers\StudyController::class, 'index'
 Route::get('/enquiries', [App\Http\Controllers\EnquiryController::class, 'index']);
 Route::get('/gallery', [App\Http\Controllers\ImageController::class, 'index']);
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index']);
+
+Route::post('/brands', [App\Http\Controllers\BrandController::class, 'store'])->name('createBrand');

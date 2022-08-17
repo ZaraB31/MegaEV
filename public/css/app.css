@@ -32,6 +32,10 @@ ul {
 li {
     list-style-type: none;
 }
+button, input[type=submit] {
+    font-family: 'Poppins', sans-serif;
+ 
+}
 main {
     width: 75%;
     margin: 40px auto;

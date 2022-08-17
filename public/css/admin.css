@@ -1,6 +1,4 @@
-body {
-    margin: 0;
-}
+/*Header Styling*/
 header {
     background-color: #95a1ae;
     position: sticky;
@@ -25,4 +23,60 @@ header nav ul li:hover {
 header nav ul a {
     color: white;
     text-decoration: none;
+}
+/*Main styling*/
+main {
+    width: 85%;
+    margin: 20px auto;
+}
+section {
+    float: left;
+}
+section.table {
+    width: 60%;
+    margin-right: 5%;
+}
+section.form {
+    width: 35%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table tr th {
+    background-color: #EF8B6E;
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #EF8B6E;
+
+}
+table tr td {
+    background-color: #F3F3F3;
+    padding: 10px;
+    border: 2px solid #95a1ae;
+    border-top: none;
+}
+
+form input, form textarea{
+    width: 94%;
+    border: 2px solid #95a1ae;
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    font-size: 16px;
+}
+form textarea {
+    height: 150px;
+}
+form input[type=submit] {
+    border: none;
+    background-color: #EF8B6E;
+    width: 50%;
+    float: right;
+    padding: 8px 12px;
+    margin-top: 10px;
+}
+form input[type=submit]:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
