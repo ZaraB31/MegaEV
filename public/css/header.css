@@ -4,8 +4,11 @@ header {
     display: flex;
     justify-content: space-between;
 }
+.hamburger {
+    display: none;
+}
 header img {
-    height: 103px;
+    height: 80px;
     width: 200px;
     object-fit: cover;
     margin-left: 5vw;
@@ -14,7 +17,7 @@ header nav ul{
     display: flex;
     margin-right: 5vw;
     margin-top: 12px;
-    height: 80px;
+    height: 70px;
     width: 60vw;
     justify-content: space-between;
     text-align: center;
@@ -23,5 +26,49 @@ header nav ul li {
     font-family: 'Oswald', sans-serif; 
     letter-spacing: 1px;
     font-size: 1.5em;
-    padding-top: 20px;
+    padding-top: 10px;
+}
+@media only screen and (max-width: 890px) {
+    .hamburger {
+        display: none;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+    .hamburger .line {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: white;
+        margin-block: 10px;
+        border-radius: 4px;
+        transition: transform .5s;
+        opacity: .25s;
+    }
+    .hamburger.active .line:nth-child(1) {
+        transform: translateY(13px) rotate(45deg);
+    }
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .line:nth-child(3) {
+        transform: translateY(-13px) rotate(-45deg);
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 17px;
+        right: 20px
+    }
+    
+    .menu.open {
+        display: block;
+        height: auto;
+        text-align: right;
+        margin-top: 70px;
+    }
+    .menu.open li {
+        margin-bottom: 15px;
+    }
 }
