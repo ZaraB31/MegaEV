@@ -33,12 +33,17 @@ main {
 section {
     float: left;
 }
+aside {
+    float: right;
+}
 section.table {
     width: 60%;
-    margin-right: 5%;
+    margin-right: 4%;
 }
 section.form {
-    width: 35%;
+    width: 30%;
+    background-color: #95a1ae;
+    padding: 1%;
 }
 table {
     width: 100%;
@@ -132,12 +137,9 @@ form input[type=submit]:hover {
     padding: 8px 12px;
     width: 15%;
     border: none;
-}
-.editButton {
-    background-color: #95a1ae;
-}
-.deleteButton, .addButton {
     background-color: #EF8B6E;
+}
+.deleteButton, .addButton {  
     float: right;
 }
 .editButton:hover, .deleteButton:hover, .addButton:hover {
@@ -155,4 +157,41 @@ form input[type=submit]:hover {
     height: 200px;
     margin: 10px;
     object-fit: cover;
+}
+/*Brands page styling*/
+section.details {
+    width: 60%;
+}
+aside.image {
+    width: 30%;
+    background-color: #95a1ae;
+}
+aside.image h2 {
+    margin: 10px 12px;
+}
+aside.image img {
+    width: 80%;
+    margin-left: 10%;
+}
+aside.image button {
+    background-color: #EF8B6E;
+    width: 80%;
+    margin-left: 10%;
+    border: none;
+    font-size: 17px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+}
+aside.image form {
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom:55px;
+    margin-bottom: 20px;
+}
+aside.image form input {
+    width: 100%;
+}
+section.buttons {
+    width: 100%;
+    margin-top: 20px;
 }

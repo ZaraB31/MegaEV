@@ -31,7 +31,7 @@ Route::get('/admin/gallery', [App\Http\Controllers\ImageController::class, 'inde
 Route::get('/admin/products', [App\Http\Controllers\ProductController::class, 'index']);
 
 Route::post('/admin/brands', [App\Http\Controllers\BrandController::class, 'store'])->name('createBrand');
-Route::get('/admin/brand/{id}', [App\Http\Controllers\BrandController::class, 'show']);
+Route::get('/admin/brand/{id}', [App\Http\Controllers\BrandController::class, 'show'])->name('showBrand');
 
 Route::post('/admin/products', [App\Http\Controllers\ProductController::class, 'store'])->name('createProduct');
 Route::get('/admin/product/{id}', [App\Http\Controllers\ProductController::class, 'show']);
@@ -39,3 +39,4 @@ Route::get('/admin/product/{id}', [App\Http\Controllers\ProductController::class
 Route::post('/admin/gallery', [App\Http\Controllers\ImageController::class, 'store'])->name('createImage');
 Route::get('/admin/gallery/{id}', [App\Http\Controllers\ImageController::class, 'show']);
 
+Route::post('/admin/brand/image', [App\Http\Controllers\BrandImageController::class, 'store'])->name('assignBrandImage');

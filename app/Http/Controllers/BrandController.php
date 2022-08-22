@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use App\Models\BrandImage;
+use App\Models\Image;
+
 
 class BrandController extends Controller
 {
@@ -53,7 +56,9 @@ class BrandController extends Controller
     public function show($id)
     {
         $brand = Brand::findOrFail($id);
+        $brandImage = BrandImage::where('brand_id', $id)->first();
+        $images = Image::all();
 
-        return view('admin/brands/show', compact('brand'));
+        return view('admin/brands/show', ['brand' => $brand, 'brandImage' => $brandImage, 'images' => $images]);
     }
 }

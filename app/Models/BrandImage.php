@@ -14,10 +14,10 @@ class BrandImage extends Model
     ];
 
     public function brand() {
-      return $this->hasMany(Brand::class);
+      return $this->belongsTo(Brand::class);
     }
 
     public function image() {
-      return $this->hasMany(Image::class);
+      return $this->belongsTo(Image::class);
     }
 }
