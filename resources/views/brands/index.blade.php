@@ -16,7 +16,7 @@
         <div id="{{$brand->name}}" class="tabcontent" style="display:none;">
             <h2>{{$brand->name}}</h2>
             <p>{{$brand->details}}</p>
-            <p>Find out more: <a href="{{$brand->link}}">{{$brand->link}}</a></p>
+            <p>Find out more: <a href="{{$brand->link}}" target="_blank">{{$brand->link}}</a></p>
 
             <article>
                 @foreach($products as $product) 

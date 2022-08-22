@@ -35,3 +35,7 @@ Route::get('/admin/brand/{id}', [App\Http\Controllers\BrandController::class, 's
 
 Route::post('/admin/products', [App\Http\Controllers\ProductController::class, 'store'])->name('createProduct');
 Route::get('/admin/product/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+
+Route::post('/admin/gallery', [App\Http\Controllers\ImageController::class, 'store'])->name('createImage');
+Route::get('/admin/gallery/{id}', [App\Http\Controllers\ImageController::class, 'show']);
+

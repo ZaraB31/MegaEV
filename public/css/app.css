@@ -43,8 +43,7 @@ main {
 /*Brand Page Styling*/
 .tab {
     overflow: hidden;
-    background-color: #4E579C;
-    
+    background-color: #4E579C;   
 }
 .tab button {
     background-color: inherit;

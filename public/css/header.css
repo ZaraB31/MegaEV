@@ -61,6 +61,9 @@ header nav ul li {
         top: 17px;
         right: 20px
     }
+    .menu {
+        display: none;
+    }
     
     .menu.open {
         display: block;

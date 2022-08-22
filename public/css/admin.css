@@ -82,7 +82,52 @@ form input[type=submit]:hover {
     cursor: pointer;
 }
 
-.editButton, .deleteButton {
+.hiddenForm {
+    background-color: #95a1ae;
+    width: fit-content;
+    padding: 30px 50px;
+    position: fixed;
+    width: 50vw;
+    left: 22%;
+    color: white;
+}
+.hiddenForm form {
+    width: 100%;
+    padding-bottom: 55px;
+}
+.hiddenForm input {
+    width: 100%;
+}
+.hiddenForm i {
+    font-size: 24px;
+    float: right;
+}
+.hiddenForm i:hover {
+    cursor: pointer;
+    color: #D7D5D3
+}
+.hiddenForm h2 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+.hiddenForm form label {
+    font-size: 20px;
+}
+.hiddenForm form input[type=submit] {
+    width: 40%;
+    float: right;
+    margin-top: 10px;
+    background-color: #EF8B6E;
+    border: none;
+    color: white;
+}
+.hiddenForm form input[type=submit]:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: #546979;
+}
+
+.editButton, .deleteButton, .addButton {
     font-size: 17px;
     padding: 8px 12px;
     width: 15%;
@@ -91,11 +136,23 @@ form input[type=submit]:hover {
 .editButton {
     background-color: #95a1ae;
 }
-.deleteButton {
+.deleteButton, .addButton {
     background-color: #EF8B6E;
     float: right;
 }
-.editButton:hover, .deleteButton:hover {
+.editButton:hover, .deleteButton:hover, .addButton:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+/*Gallery Page Styling*/
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.images img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    object-fit: cover;
 }
