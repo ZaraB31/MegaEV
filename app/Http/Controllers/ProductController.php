@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Product;
-use App\Models\images;
+use App\Models\ProductImage;
+use App\Models\Image;
 
 
 class ProductController extends Controller
@@ -53,7 +54,10 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
+        $productImage = ProductImage::where('product_id', $id)->first();
+        $images = Image::all();
 
-        return view('admin/products/show', compact('product'));
+
+        return view('admin/products/show', ['product' => $product, 'productImage' => $productImage, 'images' => $images]);
     }
 }

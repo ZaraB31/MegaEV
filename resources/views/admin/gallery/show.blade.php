@@ -3,6 +3,7 @@
 @section('title', 'Gallery Dashboard')
 
 @section('content')
+<a href="/admin/gallery"><i class="fa-solid fa-arrow-left-long"></i> Back</a>
 <h1>{{$image->name}}</h1>
 <p>{{$image->description}}</p>
 
