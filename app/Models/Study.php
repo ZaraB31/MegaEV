@@ -10,7 +10,7 @@ class Study extends Model
     use HasFactory;
 
     protected $fillable = [
-      'name'. 'content', 'testimony', 'testimonyAuthor',  
+      'name', 'content', 'testimony', 'testimonyAuthor', 'draft',
     ];
 
     public function image() {

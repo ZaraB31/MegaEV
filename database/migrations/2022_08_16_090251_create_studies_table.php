@@ -19,6 +19,7 @@ return new class extends Migration
             $table->longText('content');
             $table->longText('testimony');
             $table->string('testimonyAuthor');
+            $table->boolean('draft');
             $table->timestamps();
         });
     }

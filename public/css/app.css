@@ -34,10 +34,10 @@ li {
 }
 button, input[type=submit] {
     font-family: 'Poppins', sans-serif;
- 
 }
 main {
     width: 75%;
+    min-height: 53vh;
     margin: 40px auto;
 }
 /*Brand Page Styling*/

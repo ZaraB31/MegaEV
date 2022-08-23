@@ -42,3 +42,7 @@ Route::get('/admin/gallery/{id}', [App\Http\Controllers\ImageController::class, 
 Route::post('/admin/brand/image', [App\Http\Controllers\BrandImageController::class, 'store'])->name('assignBrandImage');
 
 Route::post('/admin/product/image', [App\Http\Controllers\ProductImageController::class, 'store'])->name('assignProductImage');
+
+Route::get('/admin/caseStudies/create', [App\Http\Controllers\StudyController::class, 'create']);
+Route::post('/admin/caseStudies/create', [App\Http\Controllers\StudyController::class, 'store'])->name('createStudy');
+

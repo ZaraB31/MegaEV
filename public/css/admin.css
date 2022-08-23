@@ -32,6 +32,7 @@ main {
 }
 section {
     float: left;
+    width: 100%;
 }
 aside {
     float: right;
@@ -47,6 +48,7 @@ section.form {
 }
 table {
     width: 100%;
+    margin-top: 30px;
     border-collapse: collapse;
 }
 table tr th {
@@ -73,6 +75,7 @@ form input, form textarea, form select{
 }
 form textarea {
     height: 150px;
+    font-family: 'Poppins', sans-serif;
 }
 form input[type=submit] {
     border: none;
@@ -130,6 +133,20 @@ form input[type=submit]:hover {
     text-decoration: underline;
     cursor: pointer;
     background-color: #546979;
+}
+
+.fullPageForm {
+    width: 90%;
+    margin-left: 5%;
+}
+.fullPageForm input, .fullPageForm textarea {
+    width: 100%;
+}
+.fullPageForm #content {
+    height: 250px;
+}
+.fullPageForm input[type=submit] {
+    width: 30%;
 }
 
 .editButton, .deleteButton, .addButton {

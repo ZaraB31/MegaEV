@@ -4,6 +4,16 @@
 
 @section('content')
 <h1>Our Brands</h1>
+<p>Lorem ipsum dolor sit amet. Et voluptatum magnam et quos quisquam  neque 
+explicabo et quasi unde in exercitationem veniam et exercitationem maxime ut 
+quis repellat. Sed perspiciatis laborum id quae dolores qui possimus minus 
+aut laudantium illo quo sequi alias. </p>
+<p>Est quasi quisquam ad perspiciatis veniam sed velit libero. Aut sapiente 
+sapiente aut Quis sunt ea inventore perspiciatis in saepe numquam sed 
+illum delectus? Qui temporibus impedit non fugit quas qui voluptates 
+deserunt. Et quis repellendus hic culpa corporis vel odit  et dolores 
+voluptatem! </p>
+
 <section>
     
     <div class="tab">
