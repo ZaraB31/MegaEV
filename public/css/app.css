@@ -65,15 +65,46 @@ main {
 }
 .tabcontent {
     display: none;
-    padding: 6px 12px;
+    padding: 12px 18px;
     border: 1px solid #ccc;
     border-top: none;
     animation: fadeEffect 1s;
 }
-.tabcontent article div .price{
+.brand {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.brand div {
+    width: 70%;
+}
+.brand img {
+    width: 25%;
+    height: max-content;
+    margin-top: 60px;
+}
+.line {
+    border: 1px solid #4E579C;
+    margin-top: 40px;
+    width: 80%;
+}
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+    flex-direction: row-reverse;
+}
+.product div {
+    width: 65%;
+}
+.product img {
+    width: 30%;
+}
+.product .price{
     text-align: right;
 }
-.price span {
+.product .price span {
     font-weight: bold;
 }
 @keyframes fadeEffect {

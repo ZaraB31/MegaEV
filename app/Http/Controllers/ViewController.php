@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Product;
+use App\Models\BrandImage;
+use App\Models\ProductImage;
+
 
 class ViewController extends Controller
 {
@@ -21,7 +24,12 @@ class ViewController extends Controller
     {
         $brands = Brand::all()->sortBy('name');
         $products = Product::all()->sortBy('name');
+        $brandImages = BrandImage::all();
+        $productImages = ProductImage::all();
 
-        return view('brands/index', ['brands' => $brands, 'products' => $products]);    
+        return view('brands/index', ['brands' => $brands, 
+                                     'products' => $products, 
+                                     'brandImages' => $brandImages,
+                                     'productImages' => $productImages]);    
     }
 }

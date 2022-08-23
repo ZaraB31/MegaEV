@@ -14,21 +14,36 @@
 
     @foreach($brands as $brand)
         <div id="{{$brand->name}}" class="tabcontent" style="display:none;">
-            <h2>{{$brand->name}}</h2>
-            <p>{{$brand->details}}</p>
-            <p>Find out more: <a href="{{$brand->link}}" target="_blank">{{$brand->link}}</a></p>
+            <div class="brand">
+                <div>
+                    <h2>{{$brand->name}}</h2>
+                    <p>{{$brand->details}}</p>
+                    <p>Find out more: <a href="{{$brand->link}}" target="_blank">{{$brand->link}}</a></p>
+                </div>
+                @foreach($brandImages as $brandImage)
+                    @if($brandImage->brand_id === $brand->id)
+                        <img src="/uploads/images/{{$brandImage->image->file}}" alt="{{$brandImage->image->description}}">
+                    @endif
+                @endforeach
+            </div>
 
-            <article>
-                @foreach($products as $product) 
-                @if($product->brand_id === $brand->id)
-                    <div>
-                        <h3>{{$product->name}}</h3>
-                        <p>{{$product->details}}</p>
-                        <p class="price"><span>Price Range:</span> {{$product->priceRange}}</p>
-                    </div>
-                @endif
+            @foreach($products as $product) 
+            @if($product->brand_id === $brand->id)
+            <hr class="line">
+            <article class="product">
+                <div>
+                    <h3>{{$product->name}}</h3>
+                    <p>{{$product->details}}</p>
+                    <p class="price"><span>Price Range:</span> {{$product->priceRange}}</p>
+                </div>
+                @foreach($productImages as $productImage)
+                    @if($productImage->product_id === $product->id)
+                    <img src="/uploads/images/{{$productImage->image->file}}" alt="{{$productImage->image->description}}">
+                    @endif
                 @endforeach
             </article>
+            @endif
+            @endforeach
         </div>
     @endforeach
 
