@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Study;
+use App\Models\Image;
 
 class StudyController extends Controller
 {
@@ -59,6 +60,7 @@ class StudyController extends Controller
     public function show($id)
     {
         $study = Study::findOrFail($id);
-        return view('admin/caseStudies/show', ['study' => $study]);
+        $images = Image::all();
+        return view('admin/caseStudies/show', ['study' => $study, 'images' => $images]);
     }
 }

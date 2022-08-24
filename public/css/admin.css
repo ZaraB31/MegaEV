@@ -212,3 +212,7 @@ section.buttons {
     width: 100%;
     margin: 20px 0;
 }
+
+form.studyGallery input[type=checkbox] {
+    width: auto;
+}

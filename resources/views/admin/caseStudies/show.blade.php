@@ -14,10 +14,38 @@
 
 <aside class="image">
     <h2>Featured Image</h2>
+    <form action="" method="post">
+        @csrf
+        @include('includes.error')
+
+        <label for="image_id">Select Image: </label>
+        <select name="image_id" id="image_id">
+            <option value="">Select...</option>
+            @foreach($images as $image)
+            <option value="{{$image->id}}">{{$image->name}}</option>
+            @endforeach
+        </select>
+
+        <input type="text" name="study_id" id="study_id" value="{{$study->id}}" style="display:none;">
+
+        <input type="text" name="featured" id="featured" value="1" style="display:none;">
+
+        <input type="submit" value="Save">
+    </form>
 </aside>
 
 <aside class="image">
     <h2>Gallery</h2>
+    <form action="" method="post" class="studyGallery">
+
+    <label>Select Images:</label>
+        @foreach($images as $image)
+        <input type="checkbox" name="image_id" id="image_id">
+        <label for="image_id">{{$image->name}}</label>
+        @endforeach
+
+        <input type="submit" value="Add images to gallery">
+    </form>
 </aside>
 
 <section class="buttons">
