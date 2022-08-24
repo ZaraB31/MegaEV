@@ -14,7 +14,7 @@
         </tr>
         @foreach($studies as $study)
         <tr>
-            <td>{{$study->name}}  <i class="fa-solid fa-arrow-right-long"></i></td>
+            <td><a href="/admin/caseStudies/{{$study->id}}">{{$study->name}}  <i class="fa-solid fa-arrow-right-long"></i></a></td>
         </tr>
         @endforeach
     </table>

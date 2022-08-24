@@ -58,6 +58,7 @@ class StudyController extends Controller
      */
     public function show($id)
     {
-        
+        $study = Study::findOrFail($id);
+        return view('admin/caseStudies/show', ['study' => $study]);
     }
 }

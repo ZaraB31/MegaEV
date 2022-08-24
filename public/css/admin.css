@@ -167,7 +167,6 @@ form input[type=submit]:hover {
 .images {
     display: flex;
     flex-wrap: wrap;
-    
 }
 .images img {
     width: 200px;
@@ -182,6 +181,7 @@ section.details {
 aside.image {
     width: 30%;
     background-color: #95a1ae;
+    margin-bottom: 30px;
 }
 aside.image h2 {
     margin: 10px 12px;
@@ -210,5 +210,5 @@ aside.image form input {
 }
 section.buttons {
     width: 100%;
-    margin-top: 20px;
+    margin: 20px 0;
 }

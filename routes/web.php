@@ -45,4 +45,5 @@ Route::post('/admin/product/image', [App\Http\Controllers\ProductImageController
 
 Route::get('/admin/caseStudies/create', [App\Http\Controllers\StudyController::class, 'create']);
 Route::post('/admin/caseStudies/create', [App\Http\Controllers\StudyController::class, 'store'])->name('createStudy');
+Route::get('/admin/caseStudies/{id}', [App\Http\Controllers\StudyController::class, 'show'])->name('showStudy');
 
