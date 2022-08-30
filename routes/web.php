@@ -47,3 +47,4 @@ Route::get('/admin/caseStudies/create', [App\Http\Controllers\StudyController::c
 Route::post('/admin/caseStudies/create', [App\Http\Controllers\StudyController::class, 'store'])->name('createStudy');
 Route::get('/admin/caseStudies/{id}', [App\Http\Controllers\StudyController::class, 'show'])->name('showStudy');
 
+Route::post('/admin/tags/create', [App\Http\Controllers\TagController::class, 'store'])->name('createTag');
