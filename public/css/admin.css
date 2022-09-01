@@ -15,6 +15,7 @@ header nav ul a li {
     list-style-type: none;
     padding: 30px 15px;
     font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
 }
 header nav ul li:hover {
     text-decoration: underline;
@@ -181,6 +182,11 @@ form input[type=submit]:hover {
 /*Brands page styling*/
 section.details {
     width: 65%;
+}
+.details textarea {
+    border: none;
+    width: 100%;
+    height: 350px;
 }
 aside.image {
     width: 30%;

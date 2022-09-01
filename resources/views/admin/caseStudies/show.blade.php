@@ -5,7 +5,7 @@
 @section('content')
 <section class="details">
     <h1>{{$study->name}}</h1>
-    <p>{{$study->content}}</p>
+    <textarea readonly>{{$study->content}}</textarea>
 
     <h2>Testimony</h2>
     <p>{{$study->testimony}}</p>
@@ -34,14 +34,16 @@
     </form>
 </aside>
 
-<aside class="image">
+<aside class="image gallery">
     <h2>Gallery</h2>
     <form action="" method="post" class="studyGallery">
 
-    <label>Select Images:</label>
+    <p style="font-weight: bold; margin-bottom: 0.3em;">Select Images:</p>
         @foreach($images as $image)
-        <input type="checkbox" name="image_id" id="image_id">
-        <label for="image_id">{{$image->name}}</label>
+        <div>
+            <label for="image_id">{{$image->name}}</label>
+            <input type="checkbox" name="image_id" id="image_id">
+        </div>
         @endforeach
 
         <input type="submit" value="Add images to gallery">
