@@ -47,7 +47,7 @@ class ImageController extends Controller
                                  'file' => $photoName,
                                  'description' => $request['description']]);
                             
-        return view('/admin/gallery/index');
+        return redirect('/admin/gallery');
     }
 
     /**

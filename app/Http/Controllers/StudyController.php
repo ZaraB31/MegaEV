@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Study;
 use App\Models\Image;
+use App\Models\StudyImage;
 
 class StudyController extends Controller
 {
@@ -61,6 +62,11 @@ class StudyController extends Controller
     {
         $study = Study::findOrFail($id);
         $images = Image::all();
-        return view('admin/caseStudies/show', ['study' => $study, 'images' => $images]);
+        $featuredImage = StudyImage::where('study_id', $id)->where('featured', 1)->first();
+        $galleryImages = StudyImage::where('study_id', $id)->where('featured', 0)->get();
+        return view('admin/caseStudies/show', ['study' => $study, 
+                                               'images' => $images, 
+                                               'featuredImage' => $featuredImage,
+                                               'galleryImages' => $galleryImages]);
     }
 }

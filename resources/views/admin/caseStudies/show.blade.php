@@ -14,7 +14,10 @@
 
 <aside class="image">
     <h2>Featured Image</h2>
-    <form action="" method="post">
+    @if(isset($featuredImage))
+        <img src="/uploads/images/{{$featuredImage->image->file}}" alt="{{$featuredImage->image->description}}">
+    @else
+    <form action="{{ route('storeStudyFeaturedImage') }}" method="post">
         @csrf
         @include('includes.error')
 
@@ -28,26 +31,40 @@
 
         <input type="text" name="study_id" id="study_id" value="{{$study->id}}" style="display:none;">
 
-        <input type="text" name="featured" id="featured" value="1" style="display:none;">
+        <input type="text" name="featured" id="featured" value=1 style="display:non;">
 
         <input type="submit" value="Save">
     </form>
+    @endif
 </aside>
 
-<aside class="image gallery">
+<aside class="image">
     <h2>Gallery</h2>
-    <form action="" method="post" class="studyGallery">
+    @if(isset($galleryImages))
+    <div class="gallery">
+        @foreach($galleryImages as $galleryImage)
+            <img src="/uploads/images/{{$galleryImage->image->file}}" alt="{{$galleryImage->image->description}}">
+        @endforeach
+    </div>
+    @else
+    <form action="{{ route('storeStudygallery') }}" method="post" class="studyGallery">
 
-    <p style="font-weight: bold; margin-bottom: 0.3em;">Select Images:</p>
+        @csrf
+        @include('includes.error')
+
+        <p style="font-weight: bold; margin-bottom: 0.3em;">Select Images:</p>
         @foreach($images as $image)
         <div>
+            <input type="checkbox" name="image_id[]" id="image_id" value="{{$image->id}}">
             <label for="image_id">{{$image->name}}</label>
-            <input type="checkbox" name="image_id" id="image_id">
         </div>
         @endforeach
 
+        <input type="text" name="study_id" id="study_id" value="{{$study->id}}" style="display:none;">
+
         <input type="submit" value="Add images to gallery">
     </form>
+    @endif
 </aside>
 
 <section class="buttons">

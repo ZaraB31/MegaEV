@@ -10,14 +10,14 @@ class StudyImage extends Model
     use HasFactory;
 
     protected $fillable = [
-      'study_id', 'image_id',  
+      'study_id', 'image_id', 'featured', 
     ];
 
     public function study() {
-      return $this->hasMany(Study::class);
+      return $this->belongsTo(Study::class);
     }
     
     public function image() {
-      return $this->hasMany(Image::class);
+      return $this->belongsTo(Image::class);
     }
 }

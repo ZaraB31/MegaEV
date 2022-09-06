@@ -199,6 +199,7 @@ aside.image h2 {
 aside.image img {
     width: 80%;
     margin-left: 10%;
+    margin-bottom: 10%;
 }
 aside.image button {
     background-color: #EF8B6E;
@@ -225,4 +226,11 @@ section.buttons {
 
 form.studyGallery input[type=checkbox] {
     width: auto;
+}
+
+.gallery {
+    height: 300px;
+    overflow: auto;
+    margin-bottom: 20px;
+    margin-right: 10px;
 }
