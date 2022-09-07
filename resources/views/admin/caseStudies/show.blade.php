@@ -3,6 +3,9 @@
 @section('title', $study->name)
 
 @section('content')
+<div class="backButton">
+    <a  href="/admin/caseStudies"><i class="fa-solid fa-arrow-left"></i> Back</a>
+</div>
 <section class="details">
     <h1>{{$study->name}}</h1>
     <textarea readonly>{{$study->content}}</textarea>
@@ -31,7 +34,7 @@
 
         <input type="text" name="study_id" id="study_id" value="{{$study->id}}" style="display:none;">
 
-        <input type="text" name="featured" id="featured" value=1 style="display:non;">
+        <input type="text" name="featured" id="featured" value=1 style="display:none;">
 
         <input type="submit" value="Save">
     </form>

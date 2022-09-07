@@ -3,6 +3,9 @@
 @section('title', 'Brands Dashboard')
 
 @section('content')
+<div class="backButton">
+    <a  href="/admin/brands"><i class="fa-solid fa-arrow-left"></i> Back</a>
+</div>
 <section class="details">
     <h1>{{$brand->name}}</h1>
     <p>{{$brand->details}}</p>

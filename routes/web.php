@@ -18,6 +18,8 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\ViewController::class, 'home']);
 Route::get('/brands', [App\Http\Controllers\ViewController::class, 'brandsIndex']);
+Route::get('/caseStudies', [App\Http\Controllers\ViewController::class, 'caseStudyIndex']);
+
 
 /*Admin Routes*/
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);

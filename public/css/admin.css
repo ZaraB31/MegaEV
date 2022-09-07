@@ -39,7 +39,7 @@ aside {
     float: right;
 }
 section.table {
-    width: 60%;
+    width: 63%;
     margin-right: 4%;
 }
 section.form {
@@ -223,7 +223,11 @@ section.buttons {
     width: 100%;
     margin: 20px 0;
 }
-
+.backButton {
+    font-size: 17px;
+    margin-bottom: 10px;
+    width: 100%;
+}
 form.studyGallery input[type=checkbox] {
     width: auto;
 }

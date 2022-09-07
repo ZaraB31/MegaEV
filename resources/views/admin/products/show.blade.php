@@ -3,6 +3,9 @@
 @section('title', $product->name)
 
 @section('content')
+<div class="backButton">
+    <a  href="/admin/products"><i class="fa-solid fa-arrow-left"></i> Back</a>
+</div>
 <section class="details">
     <h1>{{$product->name}}</h1>
     <p>{{$product->details}}</p>
