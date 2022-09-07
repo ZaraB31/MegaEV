@@ -43,4 +43,11 @@ class ViewController extends Controller
         return view('caseStudies/index', ['studies' => $studies,
                                           'featuredImages' => $featuredImages]);
     }
+
+    public function caseStudyShow($id)
+    {
+        $study = Study::findOrFail($id);
+        $galleryImages = StudyImage::where('study_id', $id)->get();
+        return view('caseStudies/show', ['study' => $study, 'galleryImages' => $galleryImages]);
+    }
 }

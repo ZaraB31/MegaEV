@@ -14,10 +14,10 @@ aut laudantium illo quo sequi alias. </p>
         <div>
             @foreach($featuredImages as $featuredImage)
             @if($featuredImage->study_id === $study->id)
-            <a href="/"><img src="/uploads/images/{{$featuredImage->image->file}}" alt=""></a>
+            <a href="/caseStudies/{{$study->id}}"><img src="/uploads/images/{{$featuredImage->image->file}}" alt=""></a>
             @endif
             @endforeach
-            <h3><a href="/">{{$study->name}}</a></h3>
+            <h3><a href="/caseStudies/{{$study->id}}">{{$study->name}}</a></h3>
         </div>
     @endforeach
 </section>
