@@ -4,7 +4,7 @@
 
 @section('content')
 <h1>Articles</h1>
-<button class="addButton"><a href="">Add new Article</a></button>
+<button class="addButton"><a href="{{ route('createArticle') }}">Add new Article</a></button>
 <section>
     <table>
         <tr>

@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        <a href="/dashboard"><li>Overview</li></a>
+        <a href="/dashboard"><li>Dashboard</li></a>
         <a href="/admin/brands"><li>Brands</li></a>
         <a href="/admin/products"><li>Products</li></a>
         <a href="/admin/caseStudies"><li>Case Studies</li></a>

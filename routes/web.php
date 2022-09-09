@@ -54,3 +54,6 @@ Route::post('/admin/caseStudy/featuredImage', [App\Http\Controllers\StudyImageCo
 Route::post('/admin/caseStudy/gallery', [App\Http\Controllers\StudyImageController::class, 'storeGallery'])->name('storeStudygallery');
 
 Route::post('/admin/tags/create', [App\Http\Controllers\TagController::class, 'store'])->name('createTag');
+
+Route::get('/admin/articles/create', [App\Http\Controllers\ArticleController::class, 'create'])->name('createArticle');
+Route::post('/admin/articles/create', [App\Http\Controllers\ArticleController::class, 'store'])->name('storeArticle');

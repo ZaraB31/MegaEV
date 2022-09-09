@@ -1,35 +1,26 @@
 /*Header Styling*/
 header {
-    background-color: #95a1ae;
-    position: sticky;
-    top: 0;
+    background-color: #3C96C4;
+    color: white;
+    width: 13vw;
+    height: 100vh;
+    float: left;
+    position: fixed;
 }
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0;
-    margin: 0;
-}
-header nav ul a li {
-    list-style-type: none;
-    padding: 30px 15px;
-    font-family: 'Poppins', sans-serif;
+header nav ul li {
+    padding: 15px 0;
+    text-align: center;
     font-size: 1.1em;
 }
 header nav ul li:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    background-color: #EF8B6E;
+    background-color: #30789D;
 }
-header nav ul a {
-    color: white;
-    text-decoration: none;
-}
+
 /*Main styling*/
 main {
-    width: 85%;
-    margin: 20px auto;
+    float: right;
+    width: 80vw;
+    margin: 20px 3.5vw;
 }
 section {
     float: left;
@@ -44,8 +35,9 @@ section.table {
 }
 section.form {
     width: 30%;
-    background-color: #95a1ae;
+    background-color: #3C96C4;
     padding: 1%;
+    margin-top: 30px;
 }
 table {
     width: 100%;
@@ -53,12 +45,11 @@ table {
     border-collapse: collapse;
 }
 table tr th {
-    background-color: #EF8B6E;
+    background-color: #3C96C4;
     text-align: left;
     padding: 10px;
     font-size: 18px;
-    border: 2px solid #EF8B6E;
-
+    border: 2px solid #3C96C4;
 }
 table tr td {
     background-color: #F3F3F3;
@@ -73,7 +64,7 @@ table tr td i {
 
 form input, form textarea, form select{
     width: 94%;
-    border: 2px solid #95a1ae;
+    border: 2px solid #3C96C4;
     margin-bottom: 5px;
     padding: 4px 8px;
     font-size: 16px;
@@ -84,7 +75,7 @@ form textarea {
 }
 form input[type=submit] {
     border: none;
-    background-color: #EF8B6E;
+    background-color: #D2691E;
     width: 50%;
     float: right;
     padding: 8px 12px;
@@ -130,7 +121,7 @@ form input[type=submit]:hover {
     width: 40%;
     float: right;
     margin-top: 10px;
-    background-color: #EF8B6E;
+    background-color: #3C96C4;
     border: none;
     color: white;
 }
@@ -145,13 +136,17 @@ form input[type=submit]:hover {
     margin-left: 5%;
 }
 .fullPageForm input, .fullPageForm textarea {
-    width: 100%;
+    width: 97%;
 }
 .fullPageForm #content {
     height: 250px;
 }
+.fullPageForm #details {
+    height: 60vh;
+}
 .fullPageForm input[type=submit] {
     width: 30%;
+    margin-bottom: 30px;
 }
 
 .editButton, .deleteButton, .addButton {
@@ -159,7 +154,7 @@ form input[type=submit]:hover {
     padding: 8px 12px;
     width: 15%;
     border: none;
-    background-color: #EF8B6E;
+    background-color: #D2691E;
 }
 .deleteButton, .addButton {  
     float: right;
@@ -190,7 +185,7 @@ section.details {
 }
 aside.image {
     width: 30%;
-    background-color: #95a1ae;
+    background-color: #3C96C4;
     margin-bottom: 30px;
 }
 aside.image h2 {
@@ -202,7 +197,7 @@ aside.image img {
     margin-bottom: 10%;
 }
 aside.image button {
-    background-color: #EF8B6E;
+    background-color: #D2691E;
     width: 80%;
     margin-left: 10%;
     border: none;

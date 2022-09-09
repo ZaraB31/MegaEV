@@ -3,12 +3,19 @@
 @section('title', $study->name)
 
 @section('content')
+<script>
+    function height() {
+        var x = document.getElementById("studyTextarea");
+        x.style.height = x.scrollHeight + "px";
+    }   
+</script>
+
 <div class="backButton">
     <a  href="/admin/caseStudies"><i class="fa-solid fa-arrow-left"></i> Back</a>
 </div>
 <section class="details">
     <h1>{{$study->name}}</h1>
-    <textarea readonly>{{$study->content}}</textarea>
+    <textarea onLoad='height()' id="studyTextarea" readonly>{{$study->content}}</textarea>
 
     <h2>Testimony</h2>
     <p>{{$study->testimony}}</p>
