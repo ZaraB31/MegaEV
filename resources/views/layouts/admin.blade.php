@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/7d0f299f51.js" crossorigin="anonymous"></script>
     <title>@yield('title')</title>
 </head>
-<body onLoad="error()">
+<body onLoad="height()" onLoad="error()" >
     <header>
         @include('includes.navigation')
     </header>

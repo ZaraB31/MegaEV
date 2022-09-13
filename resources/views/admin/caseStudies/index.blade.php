@@ -8,14 +8,28 @@
 <button class="addButton"><a href="/admin/caseStudies/create">New Case Study</a></button>
 
 <section>
-    <table>
+    <table class="halfTable">
         <tr>
-            <th>Study Name</th>
+            <th>Published Case Studies</th>
         </tr>
         @foreach($studies as $study)
+        @if($study->draft === 1)
         <tr>
             <td><a href="/admin/caseStudies/{{$study->id}}">{{$study->name}}  <i class="fa-solid fa-arrow-right-long"></i></a></td>
         </tr>
+        @endif
+        @endforeach
+    </table>
+    <table class="halfTable">
+        <tr>
+            <th>Draft Case Studies</th>
+        </tr>
+        @foreach($studies as $study)
+        @if($study->draft === 0)
+        <tr>
+            <td><a href="/admin/caseStudies/{{$study->id}}">{{$study->name}}  <i class="fa-solid fa-arrow-right-long"></i></a></td>
+        </tr>
+        @endif
         @endforeach
     </table>
 </section>

@@ -57,3 +57,4 @@ Route::post('/admin/tags/create', [App\Http\Controllers\TagController::class, 's
 
 Route::get('/admin/articles/create', [App\Http\Controllers\ArticleController::class, 'create'])->name('createArticle');
 Route::post('/admin/articles/create', [App\Http\Controllers\ArticleController::class, 'store'])->name('storeArticle');
+Route::get('/admin/articles/{id}', [App\Http\Controllers\ArticleController::class, 'show'])->name('showArticle');

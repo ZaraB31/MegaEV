@@ -11,6 +11,7 @@ aut laudantium illo quo sequi alias. </p>
 
 <section class="studies">
     @foreach($studies as $study)
+    @if($study->draft === 1)
         <div>
             @foreach($featuredImages as $featuredImage)
             @if($featuredImage->study_id === $study->id)
@@ -19,6 +20,7 @@ aut laudantium illo quo sequi alias. </p>
             @endforeach
             <h3><a href="/caseStudies/{{$study->id}}">{{$study->name}}</a></h3>
         </div>
+    @endif
     @endforeach
 </section>
 @endsection

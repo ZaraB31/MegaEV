@@ -7,6 +7,9 @@ header {
     float: left;
     position: fixed;
 }
+header nav ul {
+    margin-top: 20px;
+}
 header nav ul li {
     padding: 15px 0;
     text-align: center;
@@ -14,6 +17,11 @@ header nav ul li {
 }
 header nav ul li:hover {
     background-color: #30789D;
+}
+header nav ul a.dropdown-item {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
 }
 
 /*Main styling*/
@@ -61,7 +69,11 @@ table tr td i {
     margin: 5px;
     font-size: 18px;
 }
-
+.halfTable {
+    width: 47%;
+    float: left;
+    margin-right: 3%;
+}
 form input, form textarea, form select{
     width: 94%;
     border: 2px solid #3C96C4;
@@ -87,7 +99,7 @@ form input[type=submit]:hover {
 }
 
 .hiddenForm {
-    background-color: #95a1ae;
+    background-color: #3C96C4;
     width: fit-content;
     padding: 30px 50px;
     position: fixed;
@@ -121,7 +133,7 @@ form input[type=submit]:hover {
     width: 40%;
     float: right;
     margin-top: 10px;
-    background-color: #3C96C4;
+    background-color: #D2691E;
     border: none;
     color: white;
 }

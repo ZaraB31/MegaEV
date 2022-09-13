@@ -5,7 +5,7 @@
 @section('content')
 <script>
     function height() {
-        var x = document.getElementById("studyTextarea");
+        var x = document.getElementById("contentTextarea");
         x.style.height = x.scrollHeight + "px";
     }   
 </script>
@@ -15,7 +15,7 @@
 </div>
 <section class="details">
     <h1>{{$study->name}}</h1>
-    <textarea onLoad='height()' id="studyTextarea" readonly>{{$study->content}}</textarea>
+    <textarea id="contentTextarea" readonly>{{$study->content}}</textarea>
 
     <h2>Testimony</h2>
     <p>{{$study->testimony}}</p>

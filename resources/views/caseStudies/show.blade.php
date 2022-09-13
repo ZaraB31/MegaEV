@@ -5,7 +5,7 @@
 @section('content')
 <script>
     function height() {
-        var x = document.getElementById("studyTextarea");
+        var x = document.getElementById("contentTextarea");
         x.style.height = x.scrollHeight + "px";
     }   
 </script>
@@ -16,7 +16,7 @@
         <img class="featuredImage" src="/uploads/images/{{$image->image->file}}" alt="">
     @endif
     @endforeach
-<textarea onLoad="height()" id="studyTextarea" readonly class="studyContent">{{$study->content}}</textarea>
+<textarea id="contentTextarea" readonly class="studyContent">{{$study->content}}</textarea>
 
 <div class="testimony">
     <p>{{$study->testimony}}</p>

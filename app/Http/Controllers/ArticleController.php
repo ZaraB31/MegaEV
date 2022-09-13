@@ -14,7 +14,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('admin/articles/index');
+        $articles = Article::all()->sortBy('updated_at');
+        return view('admin/articles/index', ['articles' => $articles]);
     }
 
     /**
@@ -45,5 +46,17 @@ class ArticleController extends Controller
         Article::create($input);
 
         return redirect('/admin/articles');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Tender  $tender
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('admin/articles/show', ['article' => $article]);
     }
 }
