@@ -61,7 +61,7 @@ class StudyController extends Controller
     public function show($id)
     {
         $study = Study::findOrFail($id);
-        $images = Image::all();
+        $images = Image::all()->sortByDesc('created_at');
         $featuredImage = StudyImage::where('study_id', $id)->where('featured', 1)->first();
         $galleryImages = StudyImage::where('study_id', $id)->where('featured', 0)->get();
         return view('admin/caseStudies/show', ['study' => $study, 

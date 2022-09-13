@@ -62,3 +62,5 @@ Route::post('/admin/articles/create', [App\Http\Controllers\ArticleController::c
 Route::get('/admin/articles/{id}', [App\Http\Controllers\ArticleController::class, 'show'])->name('showArticle');
 Route::post('/admin/articles/publish', [App\Http\Controllers\ArticleController::class, 'publish'])->name('publishArticle');
 Route::post('/admin/articles/unpublish', [App\Http\Controllers\ArticleController::class, 'unpublish'])->name('unpublishArticle');
+
+Route::post('/admin/article/featuredImage', [App\Http\Controllers\ArticleImageController::class, 'storeFeatured'])->name('storeArticleFeaturedImage');

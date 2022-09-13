@@ -13,6 +13,7 @@
 <div class="backButton">
     <a  href="/admin/caseStudies"><i class="fa-solid fa-arrow-left"></i> Back</a>
 </div>
+
 <section class="details">
     <h1>{{$study->name}}</h1>
     <textarea id="contentTextarea" readonly>{{$study->content}}</textarea>

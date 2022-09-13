@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('article_id');
             $table->foreignId('image_id');
+            $table->boolean('featured');
             $table->timestamps();
         });
     }

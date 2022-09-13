@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Image;
+use App\Models\ArticleImage;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Show the application dashboard.
      *
@@ -57,7 +63,11 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::findOrFail($id);
-        return view('admin/articles/show', ['article' => $article]);
+        $images = Image::all()->sortByDesc('created_at');
+        $featuredImage = ArticleImage::where('article_id', $id)->where('featured', 1)->first();
+        return view('admin/articles/show', ['article' => $article,
+                                            'images' => $images,
+                                            'featuredImage' => $featuredImage]);
     }
 
     public function publish(Request $request) {
