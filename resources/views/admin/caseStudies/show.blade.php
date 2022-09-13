@@ -22,6 +22,26 @@
     <p>{{$study->testimonyAuthor}}</p>
 </section>
 
+<aside class="draft">
+    @if($study->draft === 0)
+        <h2>This case study is a draft</h2>
+        <form action="{{ route('publishStudy') }}" method="post">
+            @csrf
+            @include('includes.error')
+            <input type="text" name="id" value="{{$study->id}}" style="display:none;">
+            <input type="submit" value="Publish Case Study">
+        </form>
+    @elseif($study->draft === 1)
+        <h2>This case study is published</h2>
+        <form action="{{ route('unpublishStudy') }}" method="post">
+            @csrf
+            @include('includes.error')
+            <input type="text" name="id" value="{{$study->id}}" style="display:none;">
+            <input type="submit" value="Return to draft">
+        </form>
+    @endif
+</aside>
+
 <aside class="image">
     <h2>Featured Image</h2>
     @if(isset($featuredImage))

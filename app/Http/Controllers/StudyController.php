@@ -69,4 +69,20 @@ class StudyController extends Controller
                                                'featuredImage' => $featuredImage,
                                                'galleryImages' => $galleryImages]);
     }
+
+    public function publish(Request $request) {
+        $id = $request['id'];
+        $study = Study::findOrFail($id);
+        $study->draft = "1";
+        $study->update();
+        return redirect()->route('showStudy', $id);
+    }
+
+    public function unpublish(Request $request) {
+        $id = $request['id'];
+        $study = Study::findOrFail($id);
+        $study->draft = "0";
+        $study->update();
+        return redirect()->route('showStudy', $id);
+    }
 }
