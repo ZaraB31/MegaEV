@@ -52,7 +52,6 @@ Route::get('/admin/caseStudies/{id}', [App\Http\Controllers\StudyController::cla
 Route::post('/admin/caseStudies/publish', [App\Http\Controllers\StudyController::class, 'publish'])->name('publishStudy');
 Route::post('/admin/caseStudies/unpublish', [App\Http\Controllers\StudyController::class, 'unpublish'])->name('unpublishStudy');
 
-
 Route::post('/admin/caseStudy/featuredImage', [App\Http\Controllers\StudyImageController::class, 'storeFeatured'])->name('storeStudyFeaturedImage');
 Route::post('/admin/caseStudy/gallery', [App\Http\Controllers\StudyImageController::class, 'storeGallery'])->name('storeStudygallery');
 
@@ -61,3 +60,5 @@ Route::post('/admin/tags/create', [App\Http\Controllers\TagController::class, 's
 Route::get('/admin/articles/create', [App\Http\Controllers\ArticleController::class, 'create'])->name('createArticle');
 Route::post('/admin/articles/create', [App\Http\Controllers\ArticleController::class, 'store'])->name('storeArticle');
 Route::get('/admin/articles/{id}', [App\Http\Controllers\ArticleController::class, 'show'])->name('showArticle');
+Route::post('/admin/articles/publish', [App\Http\Controllers\ArticleController::class, 'publish'])->name('publishArticle');
+Route::post('/admin/articles/unpublish', [App\Http\Controllers\ArticleController::class, 'unpublish'])->name('unpublishArticle');

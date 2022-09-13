@@ -59,4 +59,20 @@ class ArticleController extends Controller
         $article = Article::findOrFail($id);
         return view('admin/articles/show', ['article' => $article]);
     }
+
+    public function publish(Request $request) {
+        $id = $request['id'];
+        $article = Article::findOrFail($id);
+        $article->draft = "1";
+        $article->update();
+        return redirect()->route('showArticle', $id);
+    }
+
+    public function unpublish(Request $request) {
+        $id = $request['id'];
+        $article = Article::findOrFail($id);
+        $article->draft = "0";
+        $article->update();
+        return redirect()->route('showArticle', $id);
+    }
 }
