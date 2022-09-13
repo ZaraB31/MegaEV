@@ -239,10 +239,30 @@ section.buttons {
     margin-bottom: 10px;
     width: 100%;
 }
-form.studyGallery input[type=checkbox] {
+form.studyGallery input[type=checkbox], form.articleTags input[type=checkbox] {
     width: auto;
 }
-
+.tagContainer {
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tag {
+    display: inline-flex;
+    padding: 3px 6px;
+    margin-bottom: 8px;
+    background-color: #D2691E;
+    border-radius: 8px;
+    margin-right: 4px;
+}
+.tag p {
+    margin: 0;
+}
+.tag i {
+    margin-top: 5px;
+    margin-left: 10px; 
+}
 .gallery {
     height: 300px;
     overflow: auto;

@@ -19,7 +19,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::all()->sortBy('name');
+        $tags = Tag::all()->sortBy('tag');
         return view('admin/articleTags/index', ['tags' => $tags]);
     }
 

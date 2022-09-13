@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Image;
 use App\Models\ArticleImage;
+use App\Models\Tag;
+use App\Models\ArticleTag;
 
 class ArticleController extends Controller
 {
@@ -64,10 +66,14 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
         $images = Image::all()->sortByDesc('created_at');
+        $tags = Tag::all();
         $featuredImage = ArticleImage::where('article_id', $id)->where('featured', 1)->first();
+        $articleTags = ArticleTag::where('article_id', $id)->get();
         return view('admin/articles/show', ['article' => $article,
                                             'images' => $images,
-                                            'featuredImage' => $featuredImage]);
+                                            'featuredImage' => $featuredImage,
+                                            'tags' => $tags,
+                                            'articleTags' => $articleTags]);
     }
 
     public function publish(Request $request) {
