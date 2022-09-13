@@ -9,7 +9,7 @@
         <li><a href="">About Us</a></li>
         <li><a href="/brands">Our Brands</a></li>
         <li><a href="/caseStudies">Case Studies</a></li>
-        <li><a href="">Blog</a></li>
+        <li><a href="/blog">Blog</a></li>
         <li><a href="">Contact Us</a></li>
     </ul>
 </nav>

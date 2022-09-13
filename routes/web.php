@@ -20,6 +20,7 @@ Route::get('/', [App\Http\Controllers\ViewController::class, 'home']);
 Route::get('/brands', [App\Http\Controllers\ViewController::class, 'brandsIndex']);
 Route::get('/caseStudies', [App\Http\Controllers\ViewController::class, 'caseStudyIndex']);
 Route::get('/caseStudies/{id}', [App\Http\Controllers\ViewController::class, 'caseStudyShow']);
+Route::get('/blog', [App\Http\Controllers\ViewController::class, 'articleIndex']);
 
 
 /*Admin Routes*/

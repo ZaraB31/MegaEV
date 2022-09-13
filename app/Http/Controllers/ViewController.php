@@ -9,6 +9,9 @@ use App\Models\BrandImage;
 use App\Models\ProductImage;
 use App\Models\Study;
 use App\Models\StudyImage;
+use App\Models\Article;
+use App\Models\ArticleImage;
+use App\Models\ArticleTag;
 
 
 class ViewController extends Controller
@@ -49,5 +52,15 @@ class ViewController extends Controller
         $study = Study::findOrFail($id);
         $galleryImages = StudyImage::where('study_id', $id)->get();
         return view('caseStudies/show', ['study' => $study, 'galleryImages' => $galleryImages]);
+    }
+
+    public function articleIndex() {
+        $articles = Article::all()->sortBy('updated_at');
+        $articleImages = ArticleImage::all();
+        $articleTags = ArticleTag::all();
+
+        return view('articles/index', ['articles' => $articles,
+                                       'articleImages' => $articleImages,
+                                       'articleTags' => $articleTags]);
     }
 }
