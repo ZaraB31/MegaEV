@@ -55,12 +55,24 @@ class ViewController extends Controller
     }
 
     public function articleIndex() {
-        $articles = Article::all()->sortBy('updated_at');
+        $articles = Article::all()->sortByDesc('updated_at');
         $articleImages = ArticleImage::all();
         $articleTags = ArticleTag::all();
 
         return view('articles/index', ['articles' => $articles,
                                        'articleImages' => $articleImages,
                                        'articleTags' => $articleTags]);
+    }
+
+    public function articleShow($id) {
+        $article = Article::findOrFail($id);
+        $otherArticles = Article::where('draft', 1)->orderBy('created_at', 'desc')->take(5)->get();
+        $articleImages = ArticleImage::all();
+        $articleTags = ArticleTag::where('article_id', $id)->get();
+
+        return view('articles/show', ['article' => $article,
+                                      'otherArticles' => $otherArticles,
+                                      'articleImages' => $articleImages,
+                                      'articleTags' => $articleTags]);
     }
 }

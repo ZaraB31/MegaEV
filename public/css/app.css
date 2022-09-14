@@ -108,13 +108,13 @@ main {
     padding: 15px 10px;
 }
 
-.featuredImage {
+.featuredImage, .articleImage {
     width: 100%;
     height: 350px;
     object-fit: cover;
     margin-bottom: 40px;
 }
-.studyContent {
+.studyContent, .articleContent {
     width: 100%;
     text-align: justify;
     border: none;
@@ -147,7 +147,7 @@ main {
 }
 
 /*
-* Blog page styling
+* Blog index page styling
 */
 .blog article {
     display: flex;
@@ -160,7 +160,7 @@ main {
 .blog article img {
     width: 55%;
     object-fit: cover;
-    max-height: 300px;
+    max-height: 275px;
     height: auto;
 }
 .blog article div {
@@ -171,14 +171,18 @@ main {
 .blog article div h2 {
     margin-bottom: 0;
 }
-.tagContainer {
+.tagContainer, .articleTagContainer {
     display: flex;
     width: 100%;
     margin-top: 10px;
     justify-content: right;
     flex-wrap: wrap;
 }
-.tagContainer p {
+.articleTagContainer {
+    justify-content: left;
+    margin-bottom: 20px;
+}
+.tagContainer p, .articleTagContainer p {
     padding: 6px 10px;
     background-color: #4E579C;
     color: white;
@@ -197,4 +201,32 @@ main {
 }
 .blog article:nth-child(even) .tagContainer {
     justify-content: left;
+}
+
+/*
+* blog dipslay page styling
+*/
+.articleContent {
+    display: flex;
+}
+.article {
+    width: 70%;
+}
+.otherArticles {
+    width: 25%;
+    margin-left: 5%;
+    margin-top: 100px;
+}
+.otherArticles div {
+    border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.otherArticles div img {
+    height: 125px;
+    width: 100%;
+    object-fit: cover;
+}
+.otherArticles div h3 {
+    margin-bottom: 10px;
 }

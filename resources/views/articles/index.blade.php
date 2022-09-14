@@ -23,8 +23,8 @@
         @endforeach
         <div>
             <h2>{{$article->name}}</h2>
-            <p>Updated: {{$article->updated_at->format('d-m-Y')}}</p>
-            <a href="">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <p>Posted: {{$article->updated_at->format('d-m-Y')}}</p>
+            <a href="/blog/{{$article->id}}">Read More <i class="fa-solid fa-arrow-right"></i></a>
 
             <section class="tagContainer">
                 @foreach($articleTags as $articleTag)
