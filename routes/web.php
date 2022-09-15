@@ -22,6 +22,8 @@ Route::get('/caseStudies', [App\Http\Controllers\ViewController::class, 'caseStu
 Route::get('/caseStudies/{id}', [App\Http\Controllers\ViewController::class, 'caseStudyShow']);
 Route::get('/blog', [App\Http\Controllers\ViewController::class, 'articleIndex']);
 Route::get('/blog/{id}', [App\Http\Controllers\ViewController::class, 'articleShow']);
+Route::get('/contact', [App\Http\Controllers\ViewController::class, 'contactShow']);
+Route::post('/contact', [App\Http\Controllers\ViewController::class, 'contactCreate'])->name('storeEnquiry');
 
 
 /*Admin Routes*/

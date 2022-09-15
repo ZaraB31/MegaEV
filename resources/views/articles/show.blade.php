@@ -9,6 +9,7 @@
         x.style.height = x.scrollHeight + "px";
     }   
 </script>
+<p class="breadcrumbs"><a href="/">Home</a>\<a href="/blog">Blog</a>\{{$article->name}}</p>
 
 <section class="articleContent">
     <article class="article">

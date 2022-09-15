@@ -230,3 +230,58 @@ main {
 .otherArticles div h3 {
     margin-bottom: 10px;
 }
+
+/*
+*Contact Page styling
+*/
+.contact {
+    display: flex;
+}
+.contact article {
+    width: 45%;
+}
+.contact article div {
+    margin: 2%;
+}
+.contact article div ul li {
+    font-size: 1.1em;
+}
+.contact aside {
+    width: 55%;
+}
+.contact aside form label {
+    width: 100%;
+    font-size: 1em;
+}
+.contact aside form input, .contact aside form textarea {
+    width: 100%;
+    border: 1px solid #4E579C;
+    font-size: 1em;
+    margin-top: 5px;
+}
+.contact aside form textarea {
+    height: 200px;
+}
+.contact aside form input[type=submit] {
+    background-color: #4E579C;
+    color: white;
+    width: 30%;
+    float: right;
+    padding: 8px 10px;
+    font-size: 1em;
+    border-radius: 3px;
+}
+.contact aside form input[type=submit]:hover {
+    text-decoration: underline;
+    background-color: #6972B4;
+    border: 1px solid #6972B4;
+    cursor: pointer;
+}
+.messageSent {
+    background-color: #4E579C;
+    color: white;
+    text-align: center;
+    padding: 15px 2px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}

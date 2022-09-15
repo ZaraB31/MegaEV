@@ -12,6 +12,7 @@ use App\Models\StudyImage;
 use App\Models\Article;
 use App\Models\ArticleImage;
 use App\Models\ArticleTag;
+use App\Models\Enquiry;
 
 
 class ViewController extends Controller
@@ -74,5 +75,18 @@ class ViewController extends Controller
                                       'otherArticles' => $otherArticles,
                                       'articleImages' => $articleImages,
                                       'articleTags' => $articleTags]);
+    }
+
+    public function contactShow() {
+        return view('contact');
+    }
+
+    public function contactCreate(Request $request) {
+
+        $input = $request->all();
+
+        Enquiry::create($input);
+
+        return redirect('/contact')->with('success', 'Message sent! Thank you!');
     }
 }

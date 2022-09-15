@@ -10,6 +10,6 @@
         <li><a href="/brands">Our Brands</a></li>
         <li><a href="/caseStudies">Case Studies</a></li>
         <li><a href="/blog">Blog</a></li>
-        <li><a href="">Contact Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
     </ul>
 </nav>
