@@ -4,6 +4,7 @@ header {
     color: white;
     width: 13vw;
     height: 100vh;
+    min-width: 125px;
     float: left;
     position: fixed;
 }
@@ -268,4 +269,20 @@ form.studyGallery input[type=checkbox], form.articleTags input[type=checkbox] {
     overflow: auto;
     margin-bottom: 20px;
     margin-right: 10px;
+}
+
+/*
+*Enquiry index styling
+*/
+.enquiries table tr.hidden {
+    display: none; 
+}
+.enquiries table tr.hidden.open {
+    display: table-row;
+}
+.enquiries table tr.hidden td {
+    background-color: white;
+}
+.enquiries table .fa-solid.fa-chevron-down.animate {
+    transform: rotate(180deg);
 }
