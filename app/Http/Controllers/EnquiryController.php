@@ -27,5 +27,10 @@ class EnquiryController extends Controller
         return view('admin/enquiries/index', ['enquiries' => $enquiries]);
     }
 
+    public function destroy($id) {
 
+        $enquiry = Enquiry::findOrFail($id);
+        $enquiry->delete();
+        return redirect('/admin/enquiries');
+    }
 }

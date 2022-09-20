@@ -12,7 +12,10 @@
     </tr>
     @foreach($enquiries as $enquiry)
     <tr>
-        <td><a onClick="tableOpen('{{$enquiry->created_at}}')"> {{$enquiry->created_at->format('d-m-Y H:i')}} <i id="icon" class="fa-solid fa-chevron-down"></i></a>  <i class="fa-solid fa-trash-can"></i></td>
+        <td><a onClick="tableOpen('{{$enquiry->created_at}}')"> {{$enquiry->created_at->format('d-m-Y H:i')}} 
+            <i id="{{$enquiry->created_at}} icon" class="fa-solid fa-chevron-down"></i></a>  
+            <a href="/admin/enquiries/delete/{{$enquiry->id}}"><i class="fa-solid fa-trash-can"></i></a>
+        </td>
     </tr>
     <tr id="{{$enquiry->created_at}}.name" class="hidden">
         <td>Name: {{$enquiry->name}}</td>

@@ -2,12 +2,13 @@ function tableOpen(name) {
     var x = name + '.name';
     var y = name + '.email';
     var z = name + '.message';
+    var i = name + ' icon';
 
     console.log(x, y, z);
     var a = document.getElementById(x);
     var b = document.getElementById(y);
     var c = document.getElementById(z);
-    var d = document.getElementById('icon');
+    var d = document.getElementById(i);
 
     if(a.className === 'hidden') {
         a.className += ' open';
