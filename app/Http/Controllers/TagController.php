@@ -19,7 +19,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::all()->sortBy('tag');
+        $tags = Tag::all()->sortByDesc('updated_at');
         return view('admin/articleTags/index', ['tags' => $tags]);
     }
 
@@ -39,6 +39,13 @@ class TagController extends Controller
 
         Tag::create($input);
 
+        return redirect('/admin/tags');
+    }
+
+    public function update(Request $request, $id) {
+
+        $tag = Tag::findOrFail($id);
+        $tag->update($request->all());
         return redirect('/admin/tags');
     }
 }

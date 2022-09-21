@@ -5,7 +5,7 @@
 @section('content')
 <h1>Article Tags</h1>
 
-<section class="table">
+<section class="table tagTable">
     <table>
         <tr>
             <th>Tags</th>
@@ -14,10 +14,19 @@
         <tr>
             <td>
                 {{$tag->tag}} 
-                <i class="fa-solid fa-pen-to-square"></i> 
+                <a onClick="editTag({{$tag->id}})"><i class="fa-solid fa-pen-to-square"></i></a>
                 <i class="fa-solid fa-trash-can"></i>
+            </td>      
+        </tr>
+        <tr id="{{$tag->id}}" class="hidden">
+            <td>
+                <form action="/admin/tags/{{$tag->id}}/edit" method="post">
+                    @csrf
+                    @include('includes.error')
+                    <input type="text" name="tag" id="tag" value="{{$tag->tag}}">
+                    <input type="submit" value="Update">
+                </form>
             </td>
-            
         </tr>
         @endforeach
     </table>

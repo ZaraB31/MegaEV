@@ -286,3 +286,22 @@ form.studyGallery input[type=checkbox], form.articleTags input[type=checkbox] {
 .enquiries table .fa-solid.fa-chevron-down.animate {
     transform: rotate(180deg);
 }
+
+/*
+* Tag table styling
+*/
+.tagTable tr.hidden {
+    display: none;
+}
+.tagTable tr.hidden.open {
+    display: table-row;
+}
+.tagTable tr td form input {
+    width: 60%;
+}
+.tagTable tr td form input[type=submit] {
+    width: 30%;
+    margin: 0;
+    padding: 2px;
+    float: right;
+}
