@@ -182,8 +182,8 @@ form input[type=submit]:hover {
     flex-wrap: wrap;
 }
 .images img {
-    width: 200px;
-    height: 200px;
+    width: 175px;
+    height: 175px;
     margin: 10px;
     object-fit: cover;
 }

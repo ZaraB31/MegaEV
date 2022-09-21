@@ -62,4 +62,13 @@ class ImageController extends Controller
 
         return view('admin/gallery/show', compact('image'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $image = Image::findOrFail($id);
+        $image->update($request->all());
+
+        return redirect()->route('showImage', $id);
+        
+    }
 }

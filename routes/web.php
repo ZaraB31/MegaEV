@@ -49,6 +49,7 @@ Route::post('/admin/product/image', [App\Http\Controllers\ProductImageController
 
 Route::post('/admin/gallery', [App\Http\Controllers\ImageController::class, 'store'])->name('createImage');
 Route::get('/admin/gallery/{id}', [App\Http\Controllers\ImageController::class, 'show'])->name('showImage');
+Route::post('/admin/gallery/{id}/edit', [App\Http\Controllers\ImageController::class, 'update'])->name('updateImage');
 
 Route::get('/admin/caseStudies/create', [App\Http\Controllers\StudyController::class, 'create'])->name('createCaseStudy');
 Route::post('/admin/caseStudies/create', [App\Http\Controllers\StudyController::class, 'store'])->name('createStudy');
