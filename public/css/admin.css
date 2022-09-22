@@ -100,13 +100,12 @@ form input[type=submit]:hover {
 }
 
 .hiddenForm {
-    background-color: #3C96C4;
+    background-color: #D2691E;
     width: fit-content;
     padding: 30px 50px;
     position: fixed;
     width: 50vw;
     left: 22%;
-    color: white;
 }
 .hiddenForm form {
     width: 100%;
@@ -114,6 +113,7 @@ form input[type=submit]:hover {
 }
 .hiddenForm input {
     width: 100%;
+    border: 1px solid #D2691E;
 }
 .hiddenForm i {
     font-size: 24px;
@@ -134,9 +134,9 @@ form input[type=submit]:hover {
     width: 40%;
     float: right;
     margin-top: 10px;
-    background-color: #D2691E;
+    background-color: #3C96C4;
+    border: 1px solid #3C96C4;
     border: none;
-    color: white;
 }
 .hiddenForm form input[type=submit]:hover {
     text-decoration: underline;

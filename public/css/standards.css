@@ -22,7 +22,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
-a:hover {
+a:hover, button:hover {
     text-decoration: underline;
     cursor: pointer;
 }

@@ -32,4 +32,11 @@ class BrandImageController extends Controller
 
         return redirect()->route('showBrand', [$brand]);
     }
+
+    public function update(Request $request, $id) {
+        $brandImage = BrandImage::findOrFail($id);
+        $id = $brandImage['brand_id'];
+        $brandImage->update($request->all());
+        return redirect()->route('showBrand', $id);
+    }
 }

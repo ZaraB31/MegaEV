@@ -39,6 +39,7 @@ Route::get('/admin/products', [App\Http\Controllers\ProductController::class, 'i
 
 Route::post('/admin/brands', [App\Http\Controllers\BrandController::class, 'store'])->name('createBrand');
 Route::get('/admin/brand/{id}', [App\Http\Controllers\BrandController::class, 'show'])->name('showBrand');
+Route::post('/admin/brand/{id}/edit', [App\Http\Controllers\BrandImageController::class, 'update'])->name('editBrand');
 
 Route::post('/admin/brand/image', [App\Http\Controllers\BrandImageController::class, 'store'])->name('assignBrandImage');
 
