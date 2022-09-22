@@ -42,11 +42,12 @@
     <button class="deleteButton"><i class="fa-solid fa-trash-can"></i>  Delete</button>
 </section>
 
+@if(isset($brandImage))
 <div class="hiddenForm" id="hiddenForm" style="display:none;">
     <a onClick="closeForm()"><i class="fa-solid fa-xmark"></i></a> 
     <h2>Update Brand Logo</h2>
 
-    <form action="/admin/brand/{{$brandImage->id}}/edit" method="post" enctype="multipart/form-data">
+    <form action="/admin/brand/image/{{$brandImage->id}}/edit" method="post" enctype="multipart/form-data">
         @csrf
         @include('includes.error')
         <label for="image_id">Select new logo:</label>
@@ -62,4 +63,5 @@
         <input type="submit" value="Update">
     </form>
 </div>
+@endif
 @endsection
