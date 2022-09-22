@@ -47,6 +47,7 @@ Route::post('/admin/products', [App\Http\Controllers\ProductController::class, '
 Route::get('/admin/product/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('showProduct');
 
 Route::post('/admin/product/image', [App\Http\Controllers\ProductImageController::class, 'store'])->name('assignProductImage');
+Route::post('/admin/product/image/{id}/edit', [App\Http\Controllers\ProductImageController::class, 'update'])->name('updateProductImage');
 
 Route::post('/admin/gallery', [App\Http\Controllers\ImageController::class, 'store'])->name('createImage');
 Route::get('/admin/gallery/{id}', [App\Http\Controllers\ImageController::class, 'show'])->name('showImage');

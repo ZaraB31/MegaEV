@@ -29,7 +29,7 @@ class ProductController extends Controller
     public function index()
     {
         $brands = Brand::all()->sortBy('name');
-        $products = Product::all()->sortBy('name');
+        $products = Product::all()->sortBy('brand_id');
         return view('admin/products/index', ['brands' => $brands, 'products' => $products]);
     }
 

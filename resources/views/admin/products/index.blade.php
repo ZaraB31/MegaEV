@@ -8,10 +8,12 @@
     <table>
         <tr>
             <th>Product Name</th>
+            <th>Brand</th>
         </tr>
         @foreach($products as $product)
         <tr>
             <td><a href="/admin/product/{{$product->id}}">{{$product->name}}  <i class="fa-solid fa-arrow-right-long"></i></a></td>
+            <td>{{$product->brand->name}}</td>
         </tr>
         @endforeach
     </table>

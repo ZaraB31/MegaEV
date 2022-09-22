@@ -33,4 +33,11 @@ class ProductImageController extends Controller
 
         return redirect()->route('showProduct', [$product]);
     }
+
+    public function update(Request $request, $id) {
+        $productImage = ProductImage::findOrFail($id);
+        $id = $productImage['product_id'];
+        $productImage->update($request->all());
+        return redirect()->route('showProduct', $id);
+    }
 }
