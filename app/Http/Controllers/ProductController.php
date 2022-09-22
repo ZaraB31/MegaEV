@@ -70,4 +70,19 @@ class ProductController extends Controller
 
         return view('admin/products/show', ['product' => $product, 'productImage' => $productImage, 'images' => $images]);
     }
+
+    public function edit($id) {
+        $product = Product::findOrFail($id);
+        $brands = Brand::all()->sortBy('name');
+
+        return view('admin/products/edit', ['product' => $product, 'brands' => $brands]);
+    }
+
+    public function update(Request $request, $id) {
+        $product = Product::findOrFail($id);
+
+        $product->update($request->all());
+
+        return redirect()->route('showProduct', $id);
+    }
 }

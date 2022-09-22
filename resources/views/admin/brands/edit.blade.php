@@ -3,10 +3,11 @@
 @section('title', 'Edit Brand')
 
 @section('content')
+
 <h1>Edit Brand - {{$brand->name}}</h1>
 
 <section>
-    <form action="" method="post" class="fullPageForm">
+    <form action="/admin/brand{{$brand->id}}/edit" method="post" class="fullPageForm">
         @csrf
         @include('includes.error')
 

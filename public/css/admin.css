@@ -148,7 +148,7 @@ form input[type=submit]:hover {
     width: 90%;
     margin-left: 5%;
 }
-.fullPageForm input, .fullPageForm textarea {
+.fullPageForm input, .fullPageForm textarea, .fullPageForm select {
     width: 97%;
 }
 .fullPageForm #content {
@@ -178,6 +178,9 @@ form input[type=submit]:hover {
 }
 .deleteButton, .addButton {  
     float: right;
+}
+.editButton {
+    background-color: #3C96C4;
 }
 .editButton:hover, .deleteButton:hover, .addButton:hover {
     text-decoration: underline;

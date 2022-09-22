@@ -8,6 +8,7 @@
 </div>
 <section class="details">
     <h1>{{$product->name}}</h1>
+    <p><span>Brand:</span> {{$product->brand->name}}</p>
     <p>{{$product->details}}</p>
     <p>Price Range: {{$product->priceRange}}</p>
 </section>
@@ -38,7 +39,7 @@
 </aside>
 
 <section class="buttons">
-    <button class="editButton"><i class="fa-solid fa-pen-to-square"></i>  Edit</button>
+    <button class="editButton"><a href="/admin/product/{{$product->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
     <button class="deleteButton"><i class="fa-solid fa-trash-can"></i>  Delete</button>
 </section>
 
