@@ -27,7 +27,7 @@ Route::post('/contact', [App\Http\Controllers\ViewController::class, 'contactCre
 
 
 /*Admin Routes*/
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
+Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'index']);
 
 Route::get('/admin/articles', [App\Http\Controllers\ArticleController::class, 'index']);
 Route::get('/admin/tags', [App\Http\Controllers\TagController::class, 'index']);
@@ -39,6 +39,8 @@ Route::get('/admin/products', [App\Http\Controllers\ProductController::class, 'i
 
 Route::post('/admin/brands', [App\Http\Controllers\BrandController::class, 'store'])->name('createBrand');
 Route::get('/admin/brand/{id}', [App\Http\Controllers\BrandController::class, 'show'])->name('showBrand');
+Route::get('/admin/brand/{id}/edit', [App\Http\Controllers\BrandController::class, 'edit'])->name('editBrand');
+Route::post('/admin/brand/{id}/edit', [App\Http\Controllers\BrandController::class, 'update'])->name('updateBrand');
 
 Route::post('/admin/brand/image', [App\Http\Controllers\BrandImageController::class, 'store'])->name('assignBrandImage');
 Route::post('/admin/brand/image/{id}/edit', [App\Http\Controllers\BrandImageController::class, 'update'])->name('updateBrandImage');

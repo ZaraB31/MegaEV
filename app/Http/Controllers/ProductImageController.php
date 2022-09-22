@@ -21,17 +21,17 @@ class ProductImageController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'product_id' => 'required|unique:product_id',
+            'product_id' => 'required',
             'image_id' => 'required',
         ]);
 
-        $product = $request['product_id'];
+        $id = $request['product_id'];
 
         $input = $request->all();
 
         ProductImage::create($input);
 
-        return redirect()->route('showProduct', [$product]);
+        return redirect()->route('showProduct', $id);
     }
 
     public function update(Request $request, $id) {

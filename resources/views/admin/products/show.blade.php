@@ -22,7 +22,7 @@
             @csrf
             @include('includes.error')
 
-            <input name="product_id" type="text" value="{{$product->id}}" style="display:none;">
+            <input id="product_id" name="product_id" type="text" value="{{$product->id}}" style="display:none;">
 
             <label for="image_id">Select image:</label>
             <select name="image_id" id="image_id">

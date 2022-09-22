@@ -61,4 +61,18 @@ class BrandController extends Controller
 
         return view('admin/brands/show', ['brand' => $brand, 'brandImage' => $brandImage, 'images' => $images]);
     }
+
+    public function edit($id) {
+        $brand = Brand::findOrFail($id);
+
+        return view('admin/brands/edit', ['brand' => $brand]);
+    }
+
+    public function update(Request $request, $id) {
+        $brand = Brand::findOrFail($id);
+
+        $brand->update($request->all());
+
+        return redirect()->route('showBrand', $id);
+    }   
 }

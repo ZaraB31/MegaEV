@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Brands Dashboard')
+@section('title', $brand->name)
 
 @section('content')
 <div class="backButton">
@@ -38,7 +38,7 @@
 </aside>
 
 <section class="buttons">
-    <button class="editButton"><i class="fa-solid fa-pen-to-square"></i>  Edit</button>
+    <button class="editButton"><a href="/admin/brand/{{$brand->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
     <button class="deleteButton"><i class="fa-solid fa-trash-can"></i>  Delete</button>
 </section>
 
