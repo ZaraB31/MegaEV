@@ -57,4 +57,12 @@ class StudyImageController extends Controller
 
         return redirect()->route('showStudy', $studyId);
     }
+
+    public function updateFeatured(Request $request, $id) {
+        $studyImage = StudyImage::findOrFail($id);
+        $id = $studyImage['study_id'];
+        $studyImage->update($request->all());
+
+        return redirect()->route('showStudy', $id);
+    }
 }

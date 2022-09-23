@@ -47,6 +47,7 @@
     <h2>Featured Image</h2>
     @if(isset($featuredImage))
         <img src="/uploads/images/{{$featuredImage->image->file}}" alt="{{$featuredImage->image->description}}">
+        <button onClick="openForm()">Update image</button>
     @else
     <form action="{{ route('storeStudyFeaturedImage') }}" method="post">
         @csrf
@@ -77,6 +78,7 @@
             <img src="/uploads/images/{{$galleryImage->image->file}}" alt="{{$galleryImage->image->description}}">
         @endforeach
     </div>
+    <button>Update gallery</button>
     @else
     <form action="{{ route('storeStudygallery') }}" method="post" class="studyGallery">
 
@@ -102,4 +104,27 @@
     <button class="editButton"><i class="fa-solid fa-pen-to-square"></i>  Edit</button>
     <button class="deleteButton"><i class="fa-solid fa-trash-can"></i>  Delete</button>
 </section>
+
+@if(isset($featuredImage))
+    <div class="hiddenForm" id="hiddenForm" style="display:none;">
+    <a onClick="closeForm()"><i class="fa-solid fa-xmark"></i></a> 
+    <h2>Update Featured Image</h2>
+
+    <form action="/admin/caseStudy/featuredImage/{{$featuredImage->id}}/edit" method="post" enctype="multipart/form-data">
+        @csrf
+        @include('includes.error')
+        <label for="image_id">Select new featured image:</label>
+        <select name="image_id" id="image_id">
+            <option value="{{$featuredImage->image_id}}">{{$featuredImage->image->name}}</option>
+            @foreach($images as $image)
+            @if($image->id !== $featuredImage->image_id)
+            <option value="{{$image->id}}">{{$image->name}}</option>
+            @endif
+            @endforeach
+        </select>
+
+        <input type="submit" value="Update">
+    </form>
+    </div>
+@endif
 @endsection

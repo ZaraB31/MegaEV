@@ -217,7 +217,7 @@ aside.image h2, aside.draft h2 {
 aside.image img {
     width: 80%;
     margin-left: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 10px;
 }
 aside.image button, aside.draft input[type=submit] {
     background-color: #D2691E;

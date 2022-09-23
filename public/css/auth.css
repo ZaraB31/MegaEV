@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 main {
-    background-color: #95a1ae;
+    background-color: #3C96C4;
     height: 100vh;
     color: white;
 }
@@ -35,7 +35,7 @@ main section form button {
     float: right;
     padding: 10px 15px;
     border: none;
-    background-color: #EF8B6E;
+    background-color: #D2691E;
     color: white;
     width: 30%;
     letter-spacing: 1px;
@@ -43,5 +43,5 @@ main section form button {
 main section form button:hover {
     text-decoration: underline;
     cursor: pointer;
-    background-color: #F4B09C;
+    background-color: #E4843F;
 }

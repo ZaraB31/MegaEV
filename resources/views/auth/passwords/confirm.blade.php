@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2>Please confirm your password before continuing.</h2>
+<h1>Please confirm your password before continuing.</h1>
 
 <form method="POST" action="{{ route('password.confirm') }}">
     @csrf
