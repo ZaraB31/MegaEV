@@ -28,6 +28,8 @@ Route::post('/contact', [App\Http\Controllers\ViewController::class, 'contactCre
 
 /*Admin Routes*/
 Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'index']);
+Route::post('/admin/details/create', [App\Http\Controllers\DashboardController::class, 'createDetails'])->name('createDetails');
+
 
 Route::get('/admin/articles', [App\Http\Controllers\ArticleController::class, 'index']);
 Route::get('/admin/tags', [App\Http\Controllers\TagController::class, 'index']);

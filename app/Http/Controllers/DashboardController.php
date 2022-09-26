@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Detail;
 
 class DashboardController extends Controller
 {
@@ -23,6 +24,24 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $details = Detail::all();
+        return view('dashboard', ['details', $details]);
+    }
+
+    public function createDetails(Request $request) {
+        $this->validate($request, [
+            'address1' => 'required',
+            'address2' => 'required',
+            'address3' => 'required',
+            'postcode' => 'required|max:7',
+            'phone' => 'required|digits:11',
+            'email' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        Detail::create($input);
+
+        return redirect('/admin');
     }
 }

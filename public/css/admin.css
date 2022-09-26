@@ -186,6 +186,24 @@ form input[type=submit]:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+
+/*Dashboard Styling*/
+.dashboard {
+    display: grid;
+    grid-template-columns: 60% 35%;
+    column-gap: 5%;
+}
+.dashboard .side article {
+    background-color: #3C96C4;
+    padding: 2%;
+    margin-bottom: 10px;
+}
+.dashboard .side article form {
+    width: 90%;
+    margin-left: 5%;
+    padding-bottom: 60px;
+}
+
 /*Gallery Page Styling*/
 .images {
     display: flex;
@@ -289,9 +307,7 @@ form.studyGallery input[type=checkbox], form.articleTags input[type=checkbox] {
     margin-right: 10px;
 }
 
-/*
-*Enquiry index styling
-*/
+/*Enquiry index styling*/
 .enquiries table tr.hidden {
     display: none; 
 }
@@ -305,9 +321,7 @@ form.studyGallery input[type=checkbox], form.articleTags input[type=checkbox] {
     transform: rotate(180deg);
 }
 
-/*
-* Tag table styling
-*/
+/*Tag table styling*/
 .tagTable tr.hidden {
     display: none;
 }
