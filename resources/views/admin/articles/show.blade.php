@@ -44,6 +44,7 @@
     <h2>Featured Image</h2>
     @if(isset($featuredImage))
         <img src="/uploads/images/{{$featuredImage->image->file}}" alt="{{$featuredImage->image->description}}">
+        <button onClick="openForm()">Update Featured Image</button>
     @else 
         <form action="{{ route('storeArticleFeaturedImage') }}" method="post">
             @csrf
@@ -101,4 +102,27 @@
     <button class="editButton"><a href="/admin/articles/{{$article->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
     <button class="deleteButton"><i class="fa-solid fa-trash-can"></i>  Delete</button>
 </section>
+
+@if(isset($featuredImage))
+<div class="hiddenForm" id="hiddenForm" style="display:none;">
+    <a onClick="closeForm()"><i class="fa-solid fa-xmark"></i></a> 
+    <h2>Update Featured Image</h2>
+
+    <form action="/admin/article/featuredImage/{{$featuredImage->id}}/edit" method="post" enctype="multipart/form-data">
+        @csrf
+        @include('includes.error')
+        <label for="image_id">Select new logo:</label>
+        <select name="image_id" id="image_id">
+            <option value="">Select...</option>
+            @foreach($images as $image)
+            @if($image->id !== $featuredImage->image_id)
+                <option value="{{$image->id}}">{{$image->name}}</option>
+            @endif
+            @endforeach
+        </select>
+
+        <input type="submit" value="Update">
+    </form>
+</div>
+@endif
 @endsection

@@ -31,4 +31,11 @@ class ArticleImageController extends Controller
 
         return redirect()->route('showArticle', $articleId);
     }
+
+    public function updateFeatured(Request $request, $id) {
+        $image = ArticleImage::findOrFail($id);
+        $article = $image['article_id'];
+        $image->update($request->all());
+        return redirect()->route('showArticle', $article);
+    }
 }

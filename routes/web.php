@@ -79,6 +79,7 @@ Route::post('/admin/articles/publish', [App\Http\Controllers\ArticleController::
 Route::post('/admin/articles/unpublish', [App\Http\Controllers\ArticleController::class, 'unpublish'])->name('unpublishArticle');
 
 Route::post('/admin/article/featuredImage', [App\Http\Controllers\ArticleImageController::class, 'storeFeatured'])->name('storeArticleFeaturedImage');
+Route::post('/admin/article/featuredImage/{id}/edit', [App\Http\Controllers\ArticleImageController::class, 'updateFeatured'])->name('updateArticleFeaturedImage');
 
 Route::post('/admin/article/tags', [App\Http\Controllers\ArticleTagController::class, 'assignTags'])->name('assignArticleTags');
 Route::get('/admin/article/tags/{id}/delete', [App\Http\Controllers\ArticleTagController::class, 'destroy'])->name('deleteArticleTags');
