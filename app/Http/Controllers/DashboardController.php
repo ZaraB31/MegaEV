@@ -25,7 +25,7 @@ class DashboardController extends Controller
     public function index()
     {
         $details = Detail::all();
-        return view('dashboard', ['details', $details]);
+        return view('dashboard', ['details' => $details]);
     }
 
     public function createDetails(Request $request) {
@@ -41,6 +41,14 @@ class DashboardController extends Controller
         $input = $request->all();
 
         Detail::create($input);
+
+        return redirect('/admin');
+    }
+
+    public function updateDetails(Request $request, $id) {
+        $detail = Detail::findOrFail($id);
+
+        $detail->update($request->all());
 
         return redirect('/admin');
     }

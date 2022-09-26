@@ -195,13 +195,26 @@ form input[type=submit]:hover {
 }
 .dashboard .side article {
     background-color: #3C96C4;
-    padding: 2%;
+    padding: 4%;
     margin-bottom: 10px;
 }
 .dashboard .side article form {
     width: 90%;
     margin-left: 5%;
     padding-bottom: 60px;
+}
+.dashboard .side article ul {
+    margin-left: 7%;
+    font-size: 1.1em;
+}
+.dashboard .side article button {
+    background-color: #D2691E;
+    border: none;
+    width: 90%;
+    margin-left: 5%;
+    font-size: 1.1em;
+    padding: 8px 12px;
+    margin-top: 10px;
 }
 
 /*Gallery Page Styling*/
