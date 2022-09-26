@@ -66,6 +66,8 @@ Route::post('/admin/caseStudies/create', [App\Http\Controllers\StudyController::
 Route::get('/admin/caseStudies/{id}', [App\Http\Controllers\StudyController::class, 'show'])->name('showStudy');
 Route::post('/admin/caseStudies/publish', [App\Http\Controllers\StudyController::class, 'publish'])->name('publishStudy');
 Route::post('/admin/caseStudies/unpublish', [App\Http\Controllers\StudyController::class, 'unpublish'])->name('unpublishStudy');
+Route::get('/admin/caseStudies/{id}/edit', [App\Http\Controllers\StudyController::class, 'edit'])->name('editStudy');
+Route::post('/admin/caseStudies/{id}/edit', [App\Http\Controllers\StudyController::class, 'update'])->name('updateStudy');
 
 Route::post('/admin/caseStudy/featuredImage', [App\Http\Controllers\StudyImageController::class, 'storeFeatured'])->name('storeStudyFeaturedImage');
 Route::post('/admin/caseStudy/featuredImage/{id}/edit', [App\Http\Controllers\StudyImageController::class, 'updateFeatured'])->name('updateStudyFeaturedImage');

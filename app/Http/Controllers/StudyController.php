@@ -95,4 +95,18 @@ class StudyController extends Controller
         $study->update();
         return redirect()->route('showStudy', $id);
     }
+
+    public function edit($id) {
+        $study = Study::findOrFail($id);
+
+        return view('admin/caseStudies/edit', ['study' => $study]);
+    }
+
+    public function update(Request $request, $id) {
+        $study = Study::findOrFail($id);
+
+        $study->update($request->all());
+
+        return redirect()->route('showStudy', $id);
+    }
 }

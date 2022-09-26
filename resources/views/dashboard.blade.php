@@ -8,11 +8,17 @@
     
     <section class="center">
         <article class="brands">
-            <p>Brands Table</p>
-        </article>
-
-        <article class="products">
-            <p>Products Table</p>
+            <table>
+                <tr>
+                    <th colspan=2>Brands</th>
+                </tr>
+                @foreach($brands as $brand)
+                <tr>
+                    <td>{{$brand->name}}</td>
+                    <td>Product Count:</td>
+                </tr>
+                @endforeach
+            </table>
         </article>
 
         <article class="studies">
@@ -73,12 +79,13 @@
 
             @if(isset($socials))
                 @foreach($socials as $social)
-                <p><i class="fa-brands fa-square-facebook"></i> Facebook:</p>
-                <p>Name: {{$social->facebookName}}</p>
+                <ul>
+                    <li><i class="fa-brands fa-square-facebook"></i> Facebook:</li>
+                    <li>Name: {{$social->facebookName}}</li>
 
-                <p><i class="fa-brands fa-twitter"></i> Twitter:</p>
-                <p>Name: {{$social->twitterName}}</p>
-
+                    <li><i class="fa-brands fa-twitter"></i> Twitter:</li>
+                    <li>Name: {{$social->twitterName}}</li>
+                </ul>
                 <button onClick="openSecondForm()">Update Socials</button>
                 @endforeach
             @else

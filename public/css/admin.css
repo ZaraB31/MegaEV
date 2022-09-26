@@ -190,7 +190,7 @@ form input[type=submit]:hover {
 /*Dashboard Styling*/
 .dashboard {
     display: grid;
-    grid-template-columns: 60% 35%;
+    grid-template-columns: 65% 30%;
     column-gap: 5%;
 }
 .dashboard .side article {
@@ -203,7 +203,7 @@ form input[type=submit]:hover {
     margin-left: 5%;
     padding-bottom: 60px;
 }
-.dashboard .side article ul, .dashboard .side article p {
+.dashboard .side article ul{
     margin-left: 7%;
     font-size: 1.1em;
 }
