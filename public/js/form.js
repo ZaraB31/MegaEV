@@ -7,6 +7,15 @@ function closeForm() {
     var x = document.getElementById('hiddenForm');
     x.style.display = "none";
 }
+function openSecondForm() {
+    var x = document.getElementById('secondHiddenForm');
+    x.style.display = "block";
+}
+
+function closeSecondForm() {
+    var x = document.getElementById('secondHiddenForm');
+    x.style.display = "none";
+}
 
 
 function error() {

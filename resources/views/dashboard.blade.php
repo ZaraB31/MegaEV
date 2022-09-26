@@ -79,7 +79,7 @@
                 <p><i class="fa-brands fa-twitter"></i> Twitter:</p>
                 <p>Name: {{$social->twitterName}}</p>
 
-                <button>Update Socials</button>
+                <button onClick="openSecondForm()">Update Socials</button>
                 @endforeach
             @else
             <form action="{{ route('createSocials') }}" method="post">
@@ -132,6 +132,34 @@
 
             <label for="email">Email Address:</label>
             <input type="email" name="email" id="email" value="{{$detail->email}}"> 
+        @endforeach
+
+        <input type="submit" value="Update">
+    </form>
+</div>
+@endif
+
+@if(isset($socials))
+<div class="hiddenForm" id="secondHiddenForm" style="display:none;">
+    <a onClick="closeSecondForm()"><i class="fa-solid fa-xmark"></i></a> 
+    <h2>Update Socials</h2>
+
+    @foreach($socials as $social)
+    <form action="/admin/socials/{{$social->id}}/edit" method="post" enctype="multipart/form-data">
+        @csrf
+        @include('includes.error')
+        
+            <label for="facebookName">Facebook Name:</label>
+            <input type="text" name="facebookName" id="facebookName" value="{{$social->facebookName}}">
+
+            <label for="facebookLink">Facebook Link:</label>
+            <input type="text" name="facebookLink" id="facebookLink" value="{{$social->facebookLink}}">
+
+            <label for="twitterName">Twitter Name:</label>
+            <input type="text" name="twitterName" id="twitterName" value="{{$social->twitterName}}">
+
+            <label for="twitterLink">Twitter Link:</label>
+            <input type="text" name="twitterLink" id="twitterLink" value="{{$social->twitterLink}}">
         @endforeach
 
         <input type="submit" value="Update">

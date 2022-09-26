@@ -31,6 +31,7 @@ Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'index'])
 Route::post('/admin/details/create', [App\Http\Controllers\DashboardController::class, 'createDetails'])->name('createDetails');
 Route::post('/admin/details/{id}/edit', [App\Http\Controllers\DashboardController::class, 'updateDetails'])->name('updateDetails');
 Route::post('/admin/socials/create', [App\Http\Controllers\DashboardController::class, 'createSocials'])->name('createSocials');
+Route::post('/admin/socials/{id}/edit', [App\Http\Controllers\DashboardController::class, 'updateSocials'])->name('updateSocials');
 
 Route::get('/admin/articles', [App\Http\Controllers\ArticleController::class, 'index']);
 Route::get('/admin/tags', [App\Http\Controllers\TagController::class, 'index']);

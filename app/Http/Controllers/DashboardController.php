@@ -70,4 +70,12 @@ class DashboardController extends Controller
 
         return redirect('/admin');
     }
+
+    public function updateSocials(Request $request, $id) {
+        $social = Social::findOrFail($id);
+
+        $social->update($request->all());
+
+        return redirect('/admin');
+    }
 }
