@@ -203,7 +203,7 @@ form input[type=submit]:hover {
     margin-left: 5%;
     padding-bottom: 60px;
 }
-.dashboard .side article ul {
+.dashboard .side article ul, .dashboard .side article p {
     margin-left: 7%;
     font-size: 1.1em;
 }

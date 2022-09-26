@@ -28,17 +28,17 @@
         <article class="details">
             <h2>Company Details</h2>
             @if(isset($details))
-            @foreach($details as $detail)
-            <ul>
-                <li>{{$detail->address1}}</li>
-                <li>{{$detail->address2}}</li>
-                <li>{{$detail->address3}}</li>
-                <li>{{$detail->postcode}}</li>
-                <li>{{$detail->phone}}</li>
-                <li>{{$detail->email}}</li>
-            </ul>
-            <button onClick="openForm()">Update Details</button>
-            @endforeach
+                @foreach($details as $detail)
+                <ul>
+                    <li>{{$detail->address1}}</li>
+                    <li>{{$detail->address2}}</li>
+                    <li>{{$detail->address3}}</li>
+                    <li>{{$detail->postcode}}</li>
+                    <li>{{$detail->phone}}</li>
+                    <li>{{$detail->email}}</li>
+                </ul>
+                <button onClick="openForm()">Update Details</button>
+                @endforeach
             @else 
             <form action="{{ route('createDetails') }}" method="post">
                 @csrf
@@ -69,7 +69,38 @@
         </article>
 
         <article class="socials">
-            <h2>Socials</h2>  
+            <h2>Socials</h2>
+
+            @if(isset($socials))
+                @foreach($socials as $social)
+                <p><i class="fa-brands fa-square-facebook"></i> Facebook:</p>
+                <p>Name: {{$social->facebookName}}</p>
+
+                <p><i class="fa-brands fa-twitter"></i> Twitter:</p>
+                <p>Name: {{$social->twitterName}}</p>
+
+                <button>Update Socials</button>
+                @endforeach
+            @else
+            <form action="{{ route('createSocials') }}" method="post">
+                @csrf
+                @include('includes.error')
+
+                <label for="facebookName">Facebook Name:</label>
+                <input type="text" name="facebookName" id="facebookName">
+
+                <label for="facebookLink">Facebook Link:</label>
+                <input type="text" name="facebookLink" id="facebookLink">
+
+                <label for="twitterName">Twitter Name:</label>
+                <input type="text" name="twitterName" id="twitterName">
+
+                <label for="twitterLink">Twitter Link:</label>
+                <input type="text" name="twitterLink" id="twitterLink">
+
+                <input type="submit" value="Save">
+            </form>
+            @endif
         </article>
     </section>
 </section>
@@ -83,7 +114,6 @@
     <form action="/admin/details/{{$detail->id}}/edit" method="post" enctype="multipart/form-data">
         @csrf
         @include('includes.error')
-
         
             <label for="address1">Address Line 1:</label>
             <input type="text" name="address1" id="address1" value="{{$detail->address1}}">

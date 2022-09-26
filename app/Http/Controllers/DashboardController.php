@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Detail;
+use App\Models\Social;
 
 class DashboardController extends Controller
 {
@@ -25,7 +26,9 @@ class DashboardController extends Controller
     public function index()
     {
         $details = Detail::all();
-        return view('dashboard', ['details' => $details]);
+        $socials = Social::all();
+        return view('dashboard', ['details' => $details,
+                                  'socials' => $socials]);
     }
 
     public function createDetails(Request $request) {
@@ -49,6 +52,21 @@ class DashboardController extends Controller
         $detail = Detail::findOrFail($id);
 
         $detail->update($request->all());
+
+        return redirect('/admin');
+    }
+
+    public function createSocials(Request $request) {
+        $this->validate($request, [
+            'facebookName' => 'required',
+            'facebookLink' => 'required',
+            'twitterName' => 'required',
+            'twitterLink' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        Social::create($input);
 
         return redirect('/admin');
     }
