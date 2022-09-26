@@ -29,4 +29,11 @@ class ArticleTagController extends Controller
 
         return redirect()->route('showArticle', $articleId);
     }
+
+    public function destroy($id) {
+        $articleTag = ArticleTag::findOrFail($id);
+        $article = $articleTag['article_id'];
+        $articleTag->delete();
+        return redirect()->route('showArticle', $article);
+    }
 }

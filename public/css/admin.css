@@ -274,6 +274,14 @@ form.studyGallery input[type=checkbox], form.articleTags input[type=checkbox] {
     margin-top: 5px;
     margin-left: 10px; 
 }
+.tag i:hover {
+    font-size: 18px;
+    margin-top: 5px;
+}
+.tagDisplay {
+    height: 150px;
+    overflow-y: scroll;
+}
 .gallery {
     height: 300px;
     overflow: auto;

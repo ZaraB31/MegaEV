@@ -73,11 +73,14 @@ Route::post('/admin/tags/{id}/edit', [App\Http\Controllers\TagController::class,
 Route::get('/admin/articles/create', [App\Http\Controllers\ArticleController::class, 'create'])->name('createArticle');
 Route::post('/admin/articles/create', [App\Http\Controllers\ArticleController::class, 'store'])->name('storeArticle');
 Route::get('/admin/articles/{id}', [App\Http\Controllers\ArticleController::class, 'show'])->name('showArticle');
+Route::get('/admin/articles/{id}/edit', [App\Http\Controllers\ArticleController::class, 'edit'])->name('editArticle');
+Route::post('/admin/articles/{id}/edit', [App\Http\Controllers\ArticleController::class, 'update'])->name('updateArticle');
 Route::post('/admin/articles/publish', [App\Http\Controllers\ArticleController::class, 'publish'])->name('publishArticle');
 Route::post('/admin/articles/unpublish', [App\Http\Controllers\ArticleController::class, 'unpublish'])->name('unpublishArticle');
 
 Route::post('/admin/article/featuredImage', [App\Http\Controllers\ArticleImageController::class, 'storeFeatured'])->name('storeArticleFeaturedImage');
 
 Route::post('/admin/article/tags', [App\Http\Controllers\ArticleTagController::class, 'assignTags'])->name('assignArticleTags');
+Route::get('/admin/article/tags/{id}/delete', [App\Http\Controllers\ArticleTagController::class, 'destroy'])->name('deleteArticleTags');
 
 Route::get('/admin/enquiries/delete/{id}', [App\Http\Controllers\EnquiryController::class, 'destroy'])->name('deleteEnquiry');

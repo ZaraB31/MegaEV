@@ -91,4 +91,18 @@ class ArticleController extends Controller
         $article->update();
         return redirect()->route('showArticle', $id);
     }
+
+    public function edit($id) {
+        $article = Article::findOrFail($id);
+
+        return view('admin/articles/edit', ['article' => $article]);
+    }
+
+    public function update(Request $request, $id) {
+        $article = Article::findOrFail($id);
+
+        $article->update($request->all());
+
+        return redirect()->route('showArticle', $id);
+    }
 }

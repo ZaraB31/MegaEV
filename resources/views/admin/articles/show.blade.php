@@ -68,32 +68,37 @@
 
 <aside class="image">
     <h2>Article Tags</h2>
-    @if(isset($articleTags))
     <div class="tagContainer">
         @foreach($articleTags as $articleTag)
             <div class="tag">
                 <p>{{$articleTag->tag->tag}}</p>
-                <i class="fa-regular fa-circle-xmark"></i>
+                <a href="{{ route('deleteArticleTags', $articleTag->id) }}"><i class="fa-regular fa-circle-xmark"></i></a>
             </div>
         @endforeach
     </div>
-    @else
     <form action="{{ route('assignArticleTags') }}" method="post" class="articleTags">
         @csrf
         @include('includes.error')
 
         <label for="tag_id">Select Tags:</label>
-        @foreach($tags as $tag)
-        <div>
-            <input type="checkbox" name="tag_id[]" id="tag_id" value="{{$tag->id}}">
-            <label for="tag_id">{{$tag->tag}}</label>
+        <div class="tagDisplay">
+            @foreach($tags as $tag)
+            
+            <div>
+                <input type="checkbox" name="tag_id[]" id="tag_id" value="{{$tag->id}}">
+                <label for="tag_id">{{$tag->tag}}</label>
+            </div>
+            
+            @endforeach
         </div>
-        @endforeach
-
         <input type="text" name="article_id" id="article_id" value="{{$article->id}}" style="display:none;">
 
         <input type="submit" value="Save Tags">
     </form>
-    @endif
 </aside>
+
+<section class="buttons">
+    <button class="editButton"><a href="/admin/articles/{{$article->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
+    <button class="deleteButton"><i class="fa-solid fa-trash-can"></i>  Delete</button>
+</section>
 @endsection
