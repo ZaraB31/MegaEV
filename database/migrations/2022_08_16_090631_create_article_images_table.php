@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('article_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('article_id');
-            $table->foreignId('image_id');
+            $table->foreignId('article_id')->references('id')->on('articles')->onDelete('cascade');
+            $table->foreignId('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->boolean('featured');
             $table->timestamps();
         });
