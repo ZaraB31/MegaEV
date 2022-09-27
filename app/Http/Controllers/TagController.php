@@ -48,4 +48,10 @@ class TagController extends Controller
         $tag->update($request->all());
         return redirect('/admin/tags');
     }
+
+    public function delete($id) {
+        $tag = Tag::find($id);
+        $tag->delete();
+        return redirect('/admin/tags');
+    }
 }

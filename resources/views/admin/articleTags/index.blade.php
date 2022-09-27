@@ -15,7 +15,7 @@
             <td>
                 {{$tag->tag}} 
                 <a onClick="editTag({{$tag->id}})"><i class="fa-solid fa-pen-to-square"></i></a>
-                <i class="fa-solid fa-trash-can"></i>
+                <a href="{{ route('deleteTag', $tag->id) }}"><i class="fa-solid fa-trash-can"></i></a>
             </td>      
         </tr>
         <tr id="{{$tag->id}}" class="hidden">
