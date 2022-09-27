@@ -105,4 +105,10 @@ class ArticleController extends Controller
 
         return redirect()->route('showArticle', $id);
     }
+
+    public function delete($id) {
+        $article = Article::find($id);
+        $article->delete();
+        return redirect('/admin/articles');
+    }
 }
