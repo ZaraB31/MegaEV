@@ -65,7 +65,7 @@
 </div>
 @endif
 
-<div class="hiddenForm deleteForm" id="secondHiddenForm" style="dsplay:none;">
+<div class="hiddenForm deleteForm" id="secondHiddenForm" style="display:none;">
 
     <h2>{{$brand->name}}</h2>
     <p>Are you sure you want to delete this brand?</p>

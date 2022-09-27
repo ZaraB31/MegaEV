@@ -85,4 +85,10 @@ class ProductController extends Controller
 
         return redirect()->route('showProduct', $id);
     }
+
+    public function delete($id) {
+        $product = Product::find($id);
+        $product->delete();
+        return redirect('/admin/products');
+    }
 }
