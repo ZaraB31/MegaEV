@@ -109,4 +109,10 @@ class StudyController extends Controller
 
         return redirect()->route('showStudy', $id);
     }
+
+    public function delete($id) {
+        $study = Study::find($id);
+        $study->delete();
+        return redirect('/admin/caseStudies');
+    }
 }

@@ -70,6 +70,7 @@ Route::post('/admin/caseStudies/publish', [App\Http\Controllers\StudyController:
 Route::post('/admin/caseStudies/unpublish', [App\Http\Controllers\StudyController::class, 'unpublish'])->name('unpublishStudy');
 Route::get('/admin/caseStudies/{id}/edit', [App\Http\Controllers\StudyController::class, 'edit'])->name('editStudy');
 Route::post('/admin/caseStudies/{id}/edit', [App\Http\Controllers\StudyController::class, 'update'])->name('updateStudy');
+Route::get('/admin/caseStudies/{id}/delete', [App\Http\Controllers\StudyController::class, 'delete'])->name('deleteStudy');
 
 Route::post('/admin/caseStudy/featuredImage', [App\Http\Controllers\StudyImageController::class, 'storeFeatured'])->name('storeStudyFeaturedImage');
 Route::post('/admin/caseStudy/featuredImage/{id}/edit', [App\Http\Controllers\StudyImageController::class, 'updateFeatured'])->name('updateStudyFeaturedImage');

@@ -45,7 +45,7 @@
 
 <aside class="image">
     <h2>Featured Image</h2>
-    @if(isset($featuredImage))
+    @isset($featuredImage)
         <img src="/uploads/images/{{$featuredImage->image->file}}" alt="{{$featuredImage->image->description}}">
         <button onClick="openForm()">Update image</button>
     @else
@@ -67,20 +67,20 @@
 
         <input type="submit" value="Save">
     </form>
-    @endif
+    @endisset
 </aside>
 
 <aside class="image">
     <h2>Gallery</h2>
-    @if(isset($galleryImages))
-    <div class="gallery">
-        @foreach($galleryImages as $galleryImage)
-            <img src="/uploads/images/{{$galleryImage->image->file}}" alt="{{$galleryImage->image->description}}">
-        @endforeach
-    </div>
-    <button onClick="openSecondForm()">Update gallery</button>
+    @if($galleryImages->count() > 0)
+        <div class="gallery">
+            @foreach($galleryImages as $galleryImage)
+                <img src="/uploads/images/{{$galleryImage->image->file}}" alt="{{$galleryImage->image->description}}">
+            @endforeach
+        </div>
+        <button>Update gallery</button>
     @else
-    <form action="{{ route('storeStudygallery') }}" method="post" class="studyGallery">
+        <form action="{{ route('storeStudygallery') }}" method="post" class="studyGallery">
 
         @csrf
         @include('includes.error')
@@ -96,16 +96,16 @@
         <input type="text" name="study_id" id="study_id" value="{{$study->id}}" style="display:none;">
 
         <input type="submit" value="Add images to gallery">
-    </form>
+        </form>
     @endif
 </aside>
 
 <section class="buttons">
     <button class="editButton"><a href="/admin/caseStudies/{{$study->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
-    <button class="deleteButton"><i class="fa-solid fa-trash-can"></i>  Delete</button>
+    <button class="deleteButton" onClick="openSecondForm()"><i class="fa-solid fa-trash-can"></i>  Delete</button>
 </section>
 
-@if(isset($featuredImage))
+@isset($featuredImage)
     <div class="hiddenForm" id="hiddenForm" style="display:none;">
     <a onClick="closeForm()"><i class="fa-solid fa-xmark"></i></a> 
     <h2>Update Featured Image</h2>
@@ -126,27 +126,23 @@
         <input type="submit" value="Update">
     </form>
     </div>
-@endif
+@endisset
 
-@if(isset($galleryImages))
-<div class="hiddenForm" id="secondHiddenForm" >
-    <a onClick="closeSecondForm()"><i class="fa-solid fa-xmark"></i></a> 
-    <h2>Update Gallery</h2>
-    <section class="currentGallery">
-        @foreach($galleryImages as $galleryImage)
-        <div class="updateGalleryImage">
-            <i class="fa-solid fa-trash-can"></i>
-            <img src="/uploads/images/{{$galleryImage->image->file}}" alt="">
-        </div>
-        @endforeach
+<div class="hiddenForm deleteForm" id="secondHiddenForm" style="display:none;">
+
+    <h2>{{$study->name}}</h2>
+    <p>Are you sure you want to delete this Case Study?</p>
+    
+    <section>
+        <button onClick="closeSecondForm()" class="cancelButton">Cancel</button>
+        <form action="/admin/caseStudies/{{$study->id}}/delete" enctype="multipart/form-data">
+
+            @csrf
+            @include('includes.error')
+
+            <input type="submit" value="Delete">
+        </form>
     </section>
-    <form action="/admin/caseStudy/featuredImage/{{$featuredImage->id}}/edit" method="post" enctype="multipart/form-data">
-        @csrf
-        @include('includes.error')
-        
-        <input type="submit" value="Update">
-    </form>
 </div>
-@endif
 
 @endsection
