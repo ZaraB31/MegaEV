@@ -42,7 +42,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:brands',
+            'name' => 'required',
             'details' => 'required',
             'priceRange' => 'required',
             'brand_id' => 'required',

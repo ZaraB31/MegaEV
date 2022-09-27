@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->longText('details');
             $table->string('priceRange');
-            $table->foreignId('brand_id');
+            $table->foreignId('brand_id')->references('id')->on('brands')->onDelete('cascade');
             $table->timestamps();
         });
     }

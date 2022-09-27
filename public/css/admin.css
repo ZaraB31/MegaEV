@@ -106,6 +106,8 @@ form input[type=submit]:hover {
     position: fixed;
     width: 50vw;
     left: 22%;
+    max-height: 65vh;
+    overflow-y: scroll;
 }
 .hiddenForm form {
     width: 100%;
@@ -144,6 +146,33 @@ form input[type=submit]:hover {
     background-color: #546979;
 }
 
+.hiddenForm.deleteForm {
+    background-color: white;
+    overflow: hidden;
+    text-align: center;
+    border: 10px solid #D01110;
+}
+.hiddenForm.deleteForm section {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    justify-content: space-between;
+}
+.hiddenForm.deleteForm .cancelButton, .hiddenForm.deleteForm section form input[type=submit] {
+    width: 35%;
+}
+.hiddenForm.deleteForm section .cancelButton {
+    height: fit-content;
+    margin-top: 10px;    
+    border: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: #B9B7BD;
+}
+.hiddenForm.deleteForm section form input[type=submit] {
+    background-color: #D01110;
+    color: white;
+}
 .fullPageForm {
     width: 90%;
     margin-left: 5%;
@@ -349,4 +378,30 @@ form.studyGallery input[type=checkbox], form.articleTags input[type=checkbox] {
     margin: 0;
     padding: 2px;
     float: right;
+}
+
+/* Case study gallery update styling*/
+.currentGallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+.updateGalleryImage {
+    width: 30%;
+    margin-right: 1%;
+}
+.updateGalleryImage img {
+    width: 100%;
+    max-height: 125px;
+    object-fit: cover;
+}
+.updateGalleryImage i{
+    background-color: #3C96C4;
+    padding: 8px;
+    border-radius: 20px;
+    position: relative;
+    left: 10px;
+    top: 30px;
+}
+.updateGalleryImage i:hover {
+    color: slategray;
 }

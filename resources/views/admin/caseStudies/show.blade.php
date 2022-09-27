@@ -78,7 +78,7 @@
             <img src="/uploads/images/{{$galleryImage->image->file}}" alt="{{$galleryImage->image->description}}">
         @endforeach
     </div>
-    <button>Update gallery</button>
+    <button onClick="openSecondForm()">Update gallery</button>
     @else
     <form action="{{ route('storeStudygallery') }}" method="post" class="studyGallery">
 
@@ -127,4 +127,26 @@
     </form>
     </div>
 @endif
+
+@if(isset($galleryImages))
+<div class="hiddenForm" id="secondHiddenForm" >
+    <a onClick="closeSecondForm()"><i class="fa-solid fa-xmark"></i></a> 
+    <h2>Update Gallery</h2>
+    <section class="currentGallery">
+        @foreach($galleryImages as $galleryImage)
+        <div class="updateGalleryImage">
+            <i class="fa-solid fa-trash-can"></i>
+            <img src="/uploads/images/{{$galleryImage->image->file}}" alt="">
+        </div>
+        @endforeach
+    </section>
+    <form action="/admin/caseStudy/featuredImage/{{$featuredImage->id}}/edit" method="post" enctype="multipart/form-data">
+        @csrf
+        @include('includes.error')
+        
+        <input type="submit" value="Update">
+    </form>
+</div>
+@endif
+
 @endsection

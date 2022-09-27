@@ -74,5 +74,11 @@ class BrandController extends Controller
         $brand->update($request->all());
 
         return redirect()->route('showBrand', $id);
-    }   
+    }  
+
+    public function delete($id) {
+        $brand = Brand::find($id);
+        $brand->delete();
+        return redirect('/admin/brand');
+    }
 }

@@ -39,7 +39,7 @@
 
 <section class="buttons">
     <button class="editButton"><a href="/admin/brand/{{$brand->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
-    <button class="deleteButton"><i class="fa-solid fa-trash-can"></i>  Delete</button>
+    <button class="deleteButton" onClick="openSecondForm()"><i class="fa-solid fa-trash-can"></i>  Delete</button>
 </section>
 
 @if(isset($brandImage))
@@ -64,4 +64,21 @@
     </form>
 </div>
 @endif
+
+<div class="hiddenForm deleteForm" id="secondHiddenForm" style="dsplay:none;">
+
+    <h2>{{$brand->name}}</h2>
+    <p>Are you sure you want to delete this brand?</p>
+    
+    <section>
+        <button onClick="closeSecondForm()" class="cancelButton">Cancel</button>
+        <form action="/admin/brand/{{$brand->id}}/delete" enctype="multipart/form-data">
+
+            @csrf
+            @include('includes.error')
+
+            <input type="submit" value="Delete">
+        </form>
+    </section>
+</div>
 @endsection
