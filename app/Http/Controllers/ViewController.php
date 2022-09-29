@@ -24,7 +24,8 @@ class ViewController extends Controller
      */
     public function home()
     {
-        return view('home');
+        $brands = Brand::get()->sortBy('created_at')->take(5);
+        return view('home', ['brands' => $brands]);
     }
 
     public function brandsIndex() 

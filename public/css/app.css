@@ -11,7 +11,38 @@ main {
     margin-bottom: 20px;
 }
 /*Home Page Styling*/
+.home section {
+    padding: 30px 0;
+}
 
+.homeBrands {
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.homeBrands img {
+    width: 55%;
+    height: 275px;
+    object-fit: cover;
+    border-radius: 3px;
+    box-shadow: 15px 15px #4E579C;
+}
+.homeBrands div {
+    width: 40%;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+.homeBrands div p {
+    margin-top: 0;
+}
+.homeBrands div ul {
+    padding-left: 10%;
+}
+.homeBrands div ul li {
+    list-style-type: disc;
+    font-size: 1.2em;
+}
 /*Brand Page Styling*/
 .tab {
     overflow: hidden;
