@@ -10,6 +10,8 @@ main {
     font-size: 13px;
     margin-bottom: 20px;
 }
+/*Home Page Styling*/
+
 /*Brand Page Styling*/
 .tab {
     overflow: hidden;
@@ -236,6 +238,7 @@ main {
 */
 .contact {
     display: flex;
+    flex-wrap: wrap;
 }
 .contact article {
     width: 45%;
@@ -284,4 +287,15 @@ main {
     padding: 15px 2px;
     border-radius: 3px;
     margin-bottom: 10px;
+}
+@media only screen and (max-width: 860px) {
+    .contact article {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .contact aside {
+        width: 100%;
+    }
 }

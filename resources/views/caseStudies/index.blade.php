@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Case Studies - Mega EV')
+@section('title', 'Mega EV - Case Studies')
 
 @section('content')
 <h1>Case Studies</h1>

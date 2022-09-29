@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $study->name)
+@section('title', {{Mega EV - $study->name }})
 
 @section('content')
 <script>

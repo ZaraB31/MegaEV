@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', $study->name)
+@section('title', 'Edit Case Study')
 
 @section('content')
 <script>

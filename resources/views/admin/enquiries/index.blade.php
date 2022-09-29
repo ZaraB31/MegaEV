@@ -18,13 +18,13 @@
         </td>
     </tr>
     <tr id="{{$enquiry->created_at}}.name" class="hidden">
-        <td>Name: {{$enquiry->name}}</td>
+        <td><span>Name:</span> {{$enquiry->name}}</td>
     </tr>
     <tr id="{{$enquiry->created_at}}.email" class="hidden">
-        <td>Email: {{$enquiry->email}}</td>
+        <td><span>Email:</span> {{$enquiry->email}}</td>
     </tr>
     <tr id="{{$enquiry->created_at}}.message" class="hidden">
-        <td>Message: {{$enquiry->message}}</td>
+        <td><span>Message:</span> {{$enquiry->message}}</td>
     </tr>
     @endforeach
 </table>

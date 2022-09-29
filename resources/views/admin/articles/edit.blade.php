@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', $article->name)
+@section('title', 'Edit Article')
+
+@section('title', 'Admin Dashboard')
 
 @section('content')
 

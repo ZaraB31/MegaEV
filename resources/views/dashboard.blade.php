@@ -1,33 +1,23 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard')
+@section('title', 'Admin Dashboard')
 
 @section('content')
-<h1>Dashboard</h1>
+<h1>Admin Dashboard</h1>
+
 <section class="dashboard">
     
     <section class="center">
-        <article class="brands">
-            <table>
-                <tr>
-                    <th colspan=2>Brands</th>
-                </tr>
-                @foreach($brands as $brand)
-                <tr>
-                    <td>{{$brand->name}}</td>
-                    <td>Product Count:</td>
-                </tr>
-                @endforeach
-            </table>
-        </article>
-
-        <article class="studies">
-            <p>Case studies table</p>
-        </article>
-
-        <article class="articles">
-            <p>Articles table</p>
-        </article> 
+        <table>
+            <tr>
+                <th>Users</th>
+            </tr>
+            @foreach($users as $user)
+            <tr>
+                <td><a href="/admin/user/{{$user->id}}">{{$user->name}} <i class="fa-solid fa-arrow-right-long"></i></a></td>
+            </tr>
+            @endforeach
+        </table>
     </section>
 
     <section class="side">
@@ -40,7 +30,7 @@
                     <li>{{$detail->address2}}</li>
                     <li>{{$detail->address3}}</li>
                     <li>{{$detail->postcode}}</li>
-                    <li>{{$detail->phone}}</li>
+                    <li>0{{$detail->phone}}</li>
                     <li>{{$detail->email}}</li>
                 </ul>
                 <button onClick="openForm()">Update Details</button>

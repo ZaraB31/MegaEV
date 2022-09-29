@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Detail;
 use App\Models\Social;
 use App\Models\Brand;
+use App\Models\Product;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -29,9 +31,13 @@ class DashboardController extends Controller
         $details = Detail::all();
         $socials = Social::all();
         $brands = Brand::all();
+        $products = Product::all();
+        $users = User::all();
         return view('dashboard', ['details' => $details,
                                   'socials' => $socials,
-                                  'brands' => $brands]);
+                                  'brands' => $brands,
+                                  'products' => $products,
+                                  'users' => $users]);
     }
 
     public function createDetails(Request $request) {
@@ -80,5 +86,11 @@ class DashboardController extends Controller
         $social->update($request->all());
 
         return redirect('/admin');
+    }
+
+    public function showUser($id) {
+        $user = User::findOrFail($id);
+
+        return view('admin/users/show', ['user' => $user]);
     }
 }

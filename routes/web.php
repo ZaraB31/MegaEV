@@ -28,6 +28,7 @@ Route::post('/contact', [App\Http\Controllers\ViewController::class, 'contactCre
 
 /*Admin Routes*/
 Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'index']);
+Route::get('/admin/user/{id}', [App\Http\Controllers\DashboardController::class, 'showUser'])->name('showUser');
 Route::post('/admin/details/create', [App\Http\Controllers\DashboardController::class, 'createDetails'])->name('createDetails');
 Route::post('/admin/details/{id}/edit', [App\Http\Controllers\DashboardController::class, 'updateDetails'])->name('updateDetails');
 Route::post('/admin/socials/create', [App\Http\Controllers\DashboardController::class, 'createSocials'])->name('createSocials');
@@ -93,6 +94,6 @@ Route::post('/admin/article/featuredImage', [App\Http\Controllers\ArticleImageCo
 Route::post('/admin/article/featuredImage/{id}/edit', [App\Http\Controllers\ArticleImageController::class, 'updateFeatured'])->name('updateArticleFeaturedImage');
 
 Route::post('/admin/article/tags', [App\Http\Controllers\ArticleTagController::class, 'assignTags'])->name('assignArticleTags');
-Route::get('/admin/article/tags/{id}/delete', [App\Http\Controllers\ArticleTagController::class, 'delete'])->name('deleteArticleTags');
+Route::get('/admin/article/tags/{id}/delete', [App\Http\Controllers\ArticleTagController::class, 'destroy'])->name('deleteArticleTags');
 
 Route::get('/admin/enquiries/delete/{id}', [App\Http\Controllers\EnquiryController::class, 'destroy'])->name('deleteEnquiry');

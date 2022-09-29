@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us - Mega EV')
+@section('title', 'Mega EV - Contact Us ')
 
 @section('content')
 <h1>Contact Us</h1>
@@ -18,13 +18,14 @@
             </ul>
         </div>
         <div>
-            <h2>Our Email Address:</h2>
-            <p>Example@emailaddress.co.uk</p>
-        </div>
-        <div>
             <h2>Our Phone Number:</h2>
             <p>01234567890</p>
         </div>
+        <div>
+            <h2>Our Email Address:</h2>
+            <p>Example@emailaddress.co.uk</p>
+        </div>
+        
     </article>
     <aside>
         <h2>Send us a message:</h2>

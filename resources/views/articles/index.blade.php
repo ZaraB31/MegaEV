@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blog - Mega EV')
+@section('title', 'Mega EV - Blog ')
 
 @section('content')
 <h1>Blog</h1>
