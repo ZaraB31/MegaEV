@@ -43,6 +43,11 @@ main {
     list-style-type: disc;
     font-size: 1.2em;
 }
+.home .twitter {
+    width: 60%;
+    margin-left: 20%;
+    padding-top: 70px;
+}
 /*Brand Page Styling*/
 .tab {
     overflow: hidden;
