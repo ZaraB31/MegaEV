@@ -11,10 +11,49 @@ main {
     margin-bottom: 20px;
 }
 /*Home Page Styling*/
+.home {
+    display: grid;
+}
 .home section {
     padding: 50px 0;
 }
-
+.home .about {
+    height: 500px;
+}
+.home .about img{
+    position: relative;
+    left: 21vw;
+    width: 65vw;
+    height: 475px;
+    object-fit: cover;
+    border-radius: 25px 0 0 25px;
+}
+.home .about article {
+    position: relative;
+    background-color: #4E579C;
+    color: white;
+    top: -410px;
+    width: 80%;
+    left: -13vw;
+    opacity: 0.9;
+    padding: 35px 70px 35px 150px;
+    border-radius: 0 25px 25px 0;
+}
+.home .about article div i {
+    font-size: 23px;
+    margin-top: 12px;
+}
+.home .about article div h3 {
+    margin: 0;
+    width: 96%;
+    float: right;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+.home .about article div p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .homeBrands {
     width: 85%;
     margin-left: 7.5%;
@@ -23,7 +62,7 @@ main {
 }
 .homeBrands img {
     width: 55%;
-    height: 45vh;
+    height: 50vh;
     min-height: 250px;
     max-height: 400px;
     object-fit: cover;
@@ -51,7 +90,7 @@ main {
 }
 .home .news article div  {
     width: 30%;
-    height: 30vh;
+    height: 35vh;
     margin: 1% 1.5%;
     text-align: center;
 }
@@ -67,13 +106,14 @@ main {
     height: 100%;
     object-fit: cover;
     opacity: 0.4;
+    border-radius: 4px;
 }
 .home .news article div section {
     width: 100%;
     height: 50%;
     position: relative;
     padding-top: 11vh;
-    top: -31vh;
+    top: -36vh;
 }
 .home .twitter {
     width: 70%;

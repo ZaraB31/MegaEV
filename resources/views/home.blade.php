@@ -4,12 +4,29 @@
 
 @section('content')
 <article class="home">
-    <section>
-        <h1>Banner</h1>
+    <section class="banner">
+        <h2>Banner</h2>
     </section>
 
-    <section>
-        <h2>About Us</h2>
+    <section class="about">
+        <img src="{{url('/images/Brynteg.jpg')}}" alt="">
+        <article>
+            <div>
+                
+                <i class="fa-solid fa-circle-check"></i><h3>Genuine Quality Products</h3>
+                <p>Top brand EV charge points backed by manufacturers guarantees</p>
+            </div> 
+            <div>
+                
+                <i class="fa-solid fa-circle-check"></i><h3>Professional Installation</h3>
+                <p>We have a team of professional experienced engineers ready to install your charge point for you</p>
+            </div> 
+            <div>
+                
+                <i class="fa-solid fa-circle-check"></i><h3>Expert Advice</h3>
+                <p>Our team are on hand and ready to answer all of your EV queries</p>
+            </div>
+        </article>
     </section>
 
     <section class="homeBrands">
@@ -49,7 +66,8 @@
     </section>
 
     <section class="twitter">        
-    <a class="twitter-timeline" data-height="550" href="https://twitter.com/MegaEV1?ref_src=twsrc%5Etfw">Tweets by MegaEV1</a> 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    </section>
+        <a class="twitter-timeline" data-height="550" href="https://twitter.com/MegaEV1?ref_src=twsrc%5Etfw">Tweets by MegaEV1</a> 
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    
+    </section>
 </article>
 @endsection
