@@ -12,18 +12,20 @@ main {
 }
 /*Home Page Styling*/
 .home section {
-    padding: 30px 0;
+    padding: 50px 0;
 }
 
 .homeBrands {
-    width: 80%;
-    margin-left: 10%;
+    width: 85%;
+    margin-left: 7.5%;
     display: flex;
     flex-wrap: wrap;
 }
 .homeBrands img {
     width: 55%;
-    height: 275px;
+    height: 45vh;
+    min-height: 250px;
+    max-height: 400px;
     object-fit: cover;
     border-radius: 3px;
     box-shadow: 15px 15px #4E579C;
@@ -43,10 +45,39 @@ main {
     list-style-type: disc;
     font-size: 1.2em;
 }
+.home .news article{
+    display: flex;
+    flex-wrap: wrap;
+}
+.home .news article div  {
+    width: 30%;
+    height: 30vh;
+    margin: 1% 1.5%;
+    text-align: center;
+}
+.home .news article div:hover img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.home .news article div:nth-child(1) {
+    width: 99%;
+}
+.home .news article div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+.home .news article div section {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    padding-top: 11vh;
+    top: -31vh;
+}
 .home .twitter {
-    width: 60%;
-    margin-left: 20%;
-    padding-top: 70px;
+    width: 70%;
+    margin-left: 15%;
 }
 /*Brand Page Styling*/
 .tab {

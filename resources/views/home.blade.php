@@ -3,9 +3,6 @@
 @section('title', 'Mega EV')
 
 @section('content')
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="C0THS5RC"></script>
-
 <article class="home">
     <section>
         <h1>Banner</h1>
@@ -13,10 +10,6 @@
 
     <section>
         <h2>About Us</h2>
-    </section>
-
-    <section>
-        <h2>Featured Case Study</h2>
     </section>
 
     <section class="homeBrands">
@@ -32,8 +25,31 @@
         </div>
     </section>
 
+    <section class="news">
+        <h2>Latest News</h2>
+        <article>
+            @foreach($articles as $article)
+            <div>
+                
+                @foreach($articleImages as $articleImage)
+                @if($articleImage->article_id === $article->id)
+                   <img src="/uploads/images/{{$articleImage->image->file}}" alt="">
+                @endif
+                @endforeach
+                <section>
+                    <a href="/blog/{{$article->id}}">
+                        <h3>{{$article->name}}</h3>
+                        <p>Read More <i class="fa-solid fa-arrow-right"></i></p>
+                    </a>
+                </section>
+                
+            </div>
+            @endforeach   
+        </article>
+    </section>
+
     <section class="twitter">        
-    <a class="twitter-timeline" data-height="500" href="https://twitter.com/MegaEV1?ref_src=twsrc%5Etfw">Tweets by MegaEV1</a> 
+    <a class="twitter-timeline" data-height="550" href="https://twitter.com/MegaEV1?ref_src=twsrc%5Etfw">Tweets by MegaEV1</a> 
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    </section>
 </article>
 @endsection

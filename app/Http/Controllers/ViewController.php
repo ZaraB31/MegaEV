@@ -25,7 +25,11 @@ class ViewController extends Controller
     public function home()
     {
         $brands = Brand::get()->sortBy('created_at')->take(5);
-        return view('home', ['brands' => $brands]);
+        $articles = Article::where('draft', 1)->orderBy('created_at', 'desc')->take(4)->get();
+        $articleImages = ArticleImage::where('featured', 1)->get();
+        return view('home', ['brands' => $brands, 
+                             'articles' => $articles,
+                             'articleImages' => $articleImages]);
     }
 
     public function brandsIndex() 
@@ -68,7 +72,7 @@ class ViewController extends Controller
 
     public function articleShow($id) {
         $article = Article::findOrFail($id);
-        $otherArticles = Article::where('draft', 1)->orderBy('created_at', 'desc')->take(5)->get();
+        $otherArticles = Article::where('draft', 1)->orderBy('created_at', 'desc')->take(3)->get();
         $articleImages = ArticleImage::all();
         $articleTags = ArticleTag::where('article_id', $id)->get();
 
