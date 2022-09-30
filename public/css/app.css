@@ -9,7 +9,7 @@ main {
 }
 .breadcrumbs {
     font-size: 13px;
-    margin-bottom: 20px;
+    margin: 25px 0;
 }
 /*Home Page Styling*/
 .home {
@@ -71,8 +71,8 @@ main {
     position: relative;
     background-color: #4E579C;
     color: white;
-    top: -410px;
-    width: 80%;
+    top: -450px;
+    width: 70%;
     left: -13vw;
     opacity: 0.95;
     padding: 35px 70px 35px 150px;
@@ -82,9 +82,9 @@ main {
     font-size: 23px;
     margin-top: 12px;
 }
-.home .checklist article div h3 {
+.home .checklist article div h2 {
     margin: 0;
-    width: 96%;
+    width: 94%;
     float: right;
     letter-spacing: 1px;
     margin-top: 10px;
@@ -253,7 +253,7 @@ main {
     height: 200px;
     object-fit: cover;
 }
-.studies div h3 {
+.studies div h2 {
     background-color: #4E579C;
     color: white;
     position: relative;
@@ -281,7 +281,6 @@ main {
     margin-left: 10%;
     padding: 10px 3%;
     border-radius: 10px;
-    text-align: justify;
 }
 .testimony h3 {
     text-align: right;
@@ -308,8 +307,7 @@ main {
     width: 90%;
     margin-left: 5%;
     border-top: 2px solid #4E579C;
-    padding-top: 20px;
-    margin-bottom: 20px;
+    padding: 40px 0;
 }
 .blog article img {
     width: 55%;

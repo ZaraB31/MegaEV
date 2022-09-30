@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', {{Mega EV - $study->name }})
+@section('title', 'Mega EV')
 
 @section('content')
 <script>
@@ -13,7 +13,7 @@
 <h1>{{$study->name}}</h1>
     @foreach($galleryImages as $image)
     @if($image->featured === 1)
-        <img class="featuredImage" src="/uploads/images/{{$image->image->file}}" alt="">
+        <img class="featuredImage" src="/uploads/images/{{$image->image->file}}" alt="{{$image->image->description}}">
     @endif
     @endforeach
 <textarea id="contentTextarea" readonly class="studyContent">{{$study->content}}</textarea>
@@ -26,7 +26,7 @@
 <section class="gallery">
     @foreach($galleryImages as $image)
     @if($image->featured === 0)
-        <img src="/uploads/images/{{$image->image->file}}" alt="">
+        <img src="/uploads/images/{{$image->image->file}}" alt="{{$image->image->description}}">
     @endif
     @endforeach
 </section>

@@ -2,6 +2,8 @@
 
 @section('title', 'Mega EV')
 
+@section('description', 'Mega EV, North Wales leading electric car charger specialists. Approved installers of all major chargers.')
+
 @section('content')
 <article class="home">
     <section class="banner">
@@ -18,17 +20,17 @@
         <article>
             <div>
                 
-                <i class="fa-regular fa-circle-check"></i><h3>Genuine Quality Products</h3>
+                <i class="fa-regular fa-circle-check"></i><h2>Genuine Quality Products</h2>
                 <p>Top brand EV charge points backed by manufacturers guarantees</p>
             </div> 
             <div>
                 
-                <i class="fa-regular fa-circle-check"></i><h3>Professional Installation</h3>
+                <i class="fa-regular fa-circle-check"></i><h2>Professional Installation</h2>
                 <p>We have a team of professional experienced engineers ready to install your charge point for you</p>
             </div> 
             <div>
                 
-                <i class="fa-regular fa-circle-check"></i><h3>Expert Advice</h3>
+                <i class="fa-regular fa-circle-check"></i><h2>Expert Advice</h2>
                 <p>Our team are on hand and ready to answer all of your EV queries</p>
             </div>
         </article>
@@ -59,7 +61,7 @@
                 @endif
                 @endforeach
                 <section>
-                    <a href="/blog/{{$article->id}}">
+                    <a href="/blog/{{$article->name}}">
                         <h3>{{$article->name}}</h3>
                         <button>Read More <i class="fa-solid fa-arrow-right"></i></button>
                     </a>

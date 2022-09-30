@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">    
     <script src="https://kit.fontawesome.com/7d0f299f51.js" crossorigin="anonymous"></script>
     <title>@yield('title')</title>
+    <meta name="description" content="@yield('description')">
 </head>
 <body onLoad="height()">
     <header>

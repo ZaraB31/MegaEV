@@ -53,9 +53,10 @@ class ViewController extends Controller
                                           'featuredImages' => $featuredImages]);
     }
 
-    public function caseStudyShow($id)
+    public function caseStudyShow($name)
     {
-        $study = Study::findOrFail($id);
+        $study = Study::findOrFail($name);
+        $id = $study['id'];
         $galleryImages = StudyImage::where('study_id', $id)->get();
         return view('caseStudies/show', ['study' => $study, 'galleryImages' => $galleryImages]);
     }
@@ -70,8 +71,9 @@ class ViewController extends Controller
                                        'articleTags' => $articleTags]);
     }
 
-    public function articleShow($id) {
-        $article = Article::findOrFail($id);
+    public function articleShow($name) {
+        $article = Article::findOrFail($name);
+        $id = $article['id'];
         $otherArticles = Article::where('draft', 1)->orderBy('created_at', 'desc')->take(3)->get();
         $articleImages = ArticleImage::all();
         $articleTags = ArticleTag::where('article_id', $id)->get();
