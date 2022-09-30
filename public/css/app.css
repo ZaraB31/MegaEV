@@ -4,7 +4,8 @@ textarea:focus-visible {
 main {
     width: 75%;
     min-height: 54vh;
-    margin: 40px auto;
+    margin: 0 auto 40px;
+    
 }
 .breadcrumbs {
     font-size: 13px;
@@ -15,48 +16,86 @@ main {
     display: grid;
 }
 .home section {
-    padding: 50px 0;
+    padding: 70px 0;
 }
-.home .about {
+.home .banner {
+    padding: 0;
+    padding-bottom: 50px;
+    height: 575px;
+}
+.home .banner img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+    height: 575px;
+}
+.home .banner div {
+    position: relative;
+    background-color: #4E579C;
+    width: 450px;
+    float: right;
+    right: -7.5vw;
+    color: white;
+    top: 100px;
+    padding: 30px 40px;
+    border-radius: 7px;
+    opacity: 0.95;
+}
+.home .banner div h1 {
+    margin-top: 0;
+}
+.home .banner div button {
+    float: right;
+    border: none;
+    font-size: 0.9em;
+    padding: 6px 10px;
+    background-color: white;
+    border-radius: 2px;
+}
+.home .banner div button i {
+    margin-left: 3px;
+}
+.home .checklist {
     height: 500px;
 }
-.home .about img{
+.home .checklist img{
     position: relative;
     left: 21vw;
     width: 65vw;
-    height: 475px;
+    height: 500px;
     object-fit: cover;
     border-radius: 25px 0 0 25px;
 }
-.home .about article {
+.home .checklist article {
     position: relative;
     background-color: #4E579C;
     color: white;
     top: -410px;
     width: 80%;
     left: -13vw;
-    opacity: 0.9;
+    opacity: 0.95;
     padding: 35px 70px 35px 150px;
     border-radius: 0 25px 25px 0;
 }
-.home .about article div i {
+.home .checklist article div i {
     font-size: 23px;
     margin-top: 12px;
 }
-.home .about article div h3 {
+.home .checklist article div h3 {
     margin: 0;
     width: 96%;
     float: right;
     letter-spacing: 1px;
     margin-top: 10px;
 }
-.home .about article div p {
+.home .checklist article div p {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .homeBrands {
-    width: 85%;
-    margin-left: 7.5%;
+    width: 90%;
+    margin-left: 5%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -67,7 +106,7 @@ main {
     max-height: 400px;
     object-fit: cover;
     border-radius: 3px;
-    box-shadow: 15px 15px #4E579C;
+    box-shadow: 20px 20px 1px #4E579C;
 }
 .homeBrands div {
     width: 40%;
@@ -114,6 +153,12 @@ main {
     position: relative;
     padding-top: 11vh;
     top: -36vh;
+}
+.home .news article div section button {
+    border: none;
+    background-color: #4E579C;
+    color: white;
+    padding: 4px 8px;
 }
 .home .twitter {
     width: 70%;
@@ -227,7 +272,7 @@ main {
     width: 100%;
     text-align: justify;
     border: none;
-    margin-bottom: 45px;
+    margin-bottom: 10px;
 }
 .testimony {
     background-color: #4E579C;
