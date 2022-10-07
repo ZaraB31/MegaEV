@@ -32,6 +32,10 @@ class ViewController extends Controller
                              'articleImages' => $articleImages]);
     }
 
+    public function about() {
+        return view('about');
+    }
+
     public function brandsIndex() 
     {
         $brands = Brand::all()->sortBy('name');
@@ -95,5 +99,9 @@ class ViewController extends Controller
         Enquiry::create($input);
 
         return redirect('/contact')->with('success', 'Message sent! Thank you!');
+    }
+
+    public function terms() {
+        return view('terms');
     }
 }

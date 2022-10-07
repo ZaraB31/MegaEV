@@ -6,7 +6,7 @@
         <span class="line"></span>
     </button>
     <ul id="menu" class="menu">
-        <li><a href="">About Us</a></li>
+        <li><a href="/about">About Us</a></li>
         <li><a href="/brands">Our Brands</a></li>
         <li><a href="/caseStudies">Case Studies</a></li>
         <li><a href="/blog">Blog</a></li>

@@ -27,6 +27,7 @@ header nav ul li {
     letter-spacing: 1px;
     font-size: 1.4em;
     padding-top: 12px;
+    font-size: 18px;
 }
 @media only screen and (max-width: 890px) {
     .hamburger {

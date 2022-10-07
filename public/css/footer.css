@@ -11,7 +11,7 @@ footer section {
 }
 footer section article {
     width: fit-content;
-    margin: 3% 1%;
+    margin: 2.5% 1%;
 }
 footer section article div {
     display: flex;
@@ -25,4 +25,5 @@ footer li {
 }
 footer p {
     font-size: 16px;
+    margin: 5px;
 }

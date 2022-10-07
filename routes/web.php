@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\ViewController::class, 'home']);
+Route::get('/about', [App\Http\Controllers\ViewController::class, 'about']);
 Route::get('/brands', [App\Http\Controllers\ViewController::class, 'brandsIndex']);
 Route::get('/caseStudies', [App\Http\Controllers\ViewController::class, 'caseStudyIndex']);
 Route::get('/caseStudies/{name}', [App\Http\Controllers\ViewController::class, 'caseStudyShow']);
@@ -24,6 +25,7 @@ Route::get('/blog', [App\Http\Controllers\ViewController::class, 'articleIndex']
 Route::get('/blog/{name}', [App\Http\Controllers\ViewController::class, 'articleShow']);
 Route::get('/contact', [App\Http\Controllers\ViewController::class, 'contactShow']);
 Route::post('/contact', [App\Http\Controllers\ViewController::class, 'contactCreate'])->name('storeEnquiry');
+Route::get('/terms', [App\Http\Controllers\ViewController::class, 'terms']);
 
 
 /*Admin Routes*/

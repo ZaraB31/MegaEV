@@ -14,22 +14,22 @@
         <div>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Our Brands</a></li>
-                <li><a href="">Case Studies</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/brands">Our Brands</a></li>
+                <li><a href="/caseStudies">Case Studies</a></li>
             </ul>
             <ul>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/terms">Terms and Conditions</a></li>
             </ul>
         </div>
     </article>
     <article className="thirdFooter">
         <h3>Follow Us</h3>
         <ul>
-            <li><i class="fa-brands fa-square-facebook"></i> <a href=""> Mega EV</a></li>
-            <li><i class="fa-brands fa-square-twitter"></i> <a href="">@MegaEV1</a></li>
+            <li><i class="fa-brands fa-square-facebook"></i> <a href="https://www.facebook.com/Mega-EV-559448791254431" target="_blank" rel="noopener noreferrer"> Mega EV</a></li>
+            <li><i class="fa-brands fa-square-twitter"></i> <a href="https://twitter.com/MegaEV1" target="_blank" rel="noopener noreferrer">@MegaEV1</a></li>
         </ul>
     </article>
 </section>

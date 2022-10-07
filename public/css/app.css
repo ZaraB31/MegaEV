@@ -164,6 +164,8 @@ main {
     width: 70%;
     margin-left: 15%;
 }
+/*About page styling*/
+
 /*Brand Page Styling*/
 .tab {
     overflow: hidden;
@@ -258,7 +260,7 @@ main {
     color: white;
     position: relative;
     top: -7px;
-    height: 50px;
+    height: 60px;
     padding: 15px 10px;
 }
 
@@ -411,6 +413,7 @@ main {
     border: 1px solid #4E579C;
     font-size: 1em;
     margin-top: 5px;
+    padding: 5px;
 }
 .contact aside form textarea {
     height: 200px;
@@ -449,3 +452,4 @@ main {
         width: 100%;
     }
 }
+/* Terms page styling */
