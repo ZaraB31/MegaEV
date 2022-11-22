@@ -3,32 +3,95 @@
 @section('title', 'Admin Dashboard')
 
 @section('content')
-<h1>Admin Dashboard</h1>
 
-<section class="dashboard">
+
+<section class="content">
+
+    <article class="title">
+        <h1>Admin Dashboard</h1>
+    </article>
     
-    <section class="center">
+    <article class="center">
         <table>
             <tr>
-                <th>Users</th>
+                <th colspan="2">Brands and Products</th>
+            </tr>
+            @if($brands->count() > 0)
+            @foreach($brands as $brand)
+            <tr>
+                <td>{{$brand->name}}</td>
+                <td>Products: {{$productsCount[$brand->id]}}</td>
+            </tr>
+            @endforeach
+            @else
+            <tr>
+                <td>No Brands Added Yet</td>
+            </tr>
+            @endif
+        </table>
+
+        <table>
+            <tr>
+                <th colspan="2">Case Studies and Articles</th>
+            </tr>
+            <tr> 
+                @if($publishedArticles === 1)
+                    <td>{{ $publishedArticles }} Published Article</td>
+                @elseif($publishedArticles !== 0 && $publishedArticles !== 1)
+                    <td>{{ $publishedArticles }} Published Articles</td>
+                @else 
+                    <td>No Articles Published</td>
+                @endif
+
+                @if($draftArticles === 1)
+                    <td>{{ $draftArticles }} Draft Article</td>
+                @elseif($draftArticles !== 0 && $draftArticles !== 1)
+                    <td>{{ $draftArticles }} Draft Articles</td>
+                @else
+                    <td>No Draft Articles</td>
+                @endif
+            </tr>
+
+            <tr>
+                @if($publishedStudies === 1)
+                    <td>{{ $publishedStudies }} Published Case Study</td>
+                @elseif($publishedStudies !== 0 && $publishedStudies !== 1)
+                    <td>{{ $publishedStudies }} Published Case Studies</td>
+                @else
+                    <td>No Published Case Studies</td>
+                @endif
+
+                @if($draftStudies === 1)
+                    <td>{{ $draftStudies }} Draft Case Study</td>
+                @elseif($draftStudies !== 0 && $draftStudies !== 1)
+                    <td>{{ $draftStudies }} Draft Case Studies</td>
+                @else 
+                    <td>No Draft Case Studies</td>
+                @endif
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th colspan="2">Users</th>
             </tr>
             @foreach($users as $user)
             <tr>
-                <td><a href="/admin/user/{{$user->id}}">{{$user->name}} <i class="fa-solid fa-arrow-right-long"></i></a></td>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
             </tr>
             @endforeach
         </table>
-    </section>
+    </article>
 
-    <section class="side">
-        <article class="details">
+    <aside>
+        <article>
             <h2>Company Details</h2>
             @if(isset($details))
                 @foreach($details as $detail)
                 <ul>
                     <li>{{$detail->address1}}</li>
-                    <li>{{$detail->address2}}</li>
-                    <li>{{$detail->address3}}</li>
+                    <li>{{$detail->address2}} {{$detail->address3}},</li>
                     <li>{{$detail->postcode}}</li>
                     <li>0{{$detail->phone}}</li>
                     <li>{{$detail->email}}</li>
@@ -64,17 +127,17 @@
             @endif
         </article>
 
-        <article class="socials">
+        <article>
             <h2>Socials</h2>
 
             @if(isset($socials))
                 @foreach($socials as $social)
                 <ul>
                     <li><i class="fa-brands fa-square-facebook"></i> Facebook:</li>
-                    <li>Name: {{$social->facebookName}}</li>
+                    <li>{{$social->facebookName}}</li>
 
                     <li><i class="fa-brands fa-twitter"></i> Twitter:</li>
-                    <li>Name: {{$social->twitterName}}</li>
+                    <li>{{$social->twitterName}}</li>
                 </ul>
                 <button onClick="openSecondForm()">Update Socials</button>
                 @endforeach
@@ -99,7 +162,7 @@
             </form>
             @endif
         </article>
-    </section>
+    </aside>
 </section>
 
 @if(isset($details))

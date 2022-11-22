@@ -3,30 +3,39 @@
 @section('title', $image->name)
 
 @section('content')
-<div class="backButton">
-    <a  href="/admin/gallery"><i class="fa-solid fa-arrow-left"></i> Back</a>
-</div>
-<section class="table">
-    <h1>{{$image->name}}</h1>
-    <p>{{$image->description}}</p>
 
-    <img src="/uploads/images/{{$image->file}}" alt="{{$image->description}}">
-</section>
+<section class="content">
+    <div class="backButton">
+        <a  href="/admin/gallery"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
 
-<section class="form">
-    <h2>Update Details</h2>
-    <form action="/admin/gallery/{{$image->id}}/edit" method="post">
-        @csrf
-        @include('includes.error')
+    <article class="title">
+        <h1>{{$image->name}}</h1>
+        
+    </article>
 
-        <label for="name">Edit Name:</label>
-        <input type="text" name="name" id="name" value="{{$image->name}}">
+    <article class="center">
+        <p style="margin-top:0;">{{$image->description}}</p>
+        <img src="/uploads/images/{{$image->file}}" alt="{{$image->description}}">
+    </article>
 
-        <label for="description">Edit Description</label>
-        <input type="text" name="description" id="description" value="{{$image->description}}">
+    <aside>
+        <article>
+            <h2>Update Details</h2>
+            <form action="/admin/gallery/{{$image->id}}/edit" method="post">
+                @csrf
+                @include('includes.error')
 
-        <input type="submit" value="Update">
-    </form>
+                <label for="name">Edit Name:</label>
+                <input type="text" name="name" id="name" value="{{$image->name}}">
+
+                <label for="description">Edit Description</label>
+                <input type="text" name="description" id="description" value="{{$image->description}}">
+
+                <input type="submit" value="Update">
+            </form>
+        </article>
+    </aside>
 </section>
 
 @endsection

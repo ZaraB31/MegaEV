@@ -8,6 +8,8 @@ use App\Models\Social;
 use App\Models\Brand;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Article;
+use App\Models\Study;
 
 class DashboardController extends Controller
 {
@@ -30,14 +32,41 @@ class DashboardController extends Controller
     {
         $details = Detail::all();
         $socials = Social::all();
-        $brands = Brand::all();
+        $brands = Brand::all()->sortBy('name');
         $products = Product::all();
         $users = User::all();
+        $articles = Article::all();
+        $studies = Study::all();
+
+        if($brands->isNotEmpty()) {
+            foreach($brands as $brand) {
+                $id = $brand->id;
+                $productsCount[$id] = Product::where('brand_id', $id)->count();
+            }
+        } else {
+            $productsCount = 0;
+        }
+
+        if($articles->isNotEmpty()) {
+            $draftArticles = Article::where('draft', 0)->count();
+            $publishedArticles = Article::where('draft', 1)->count();
+        }
+
+        if($studies->isNotEmpty()) {
+            $draftStudies = Study::where('draft', 0)->count();
+            $publishedStudies = Study::where('draft', 1)->count();
+        }
+
         return view('dashboard', ['details' => $details,
                                   'socials' => $socials,
                                   'brands' => $brands,
                                   'products' => $products,
-                                  'users' => $users]);
+                                  'users' => $users,
+                                  'productsCount' => $productsCount,
+                                  'draftArticles' => $draftArticles,
+                                  'publishedArticles' => $publishedArticles,
+                                  'draftStudies' => $draftStudies,
+                                  'publishedStudies' => $publishedStudies]);
     }
 
     public function createDetails(Request $request) {
@@ -86,11 +115,5 @@ class DashboardController extends Controller
         $social->update($request->all());
 
         return redirect('/admin');
-    }
-
-    public function showUser($id) {
-        $user = User::findOrFail($id);
-
-        return view('admin/users/show', ['user' => $user]);
     }
 }

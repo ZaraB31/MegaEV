@@ -36,7 +36,7 @@ ul {
 li {
     list-style-type: none;
 }
-button, input[type=submit] {
+button, input[type=submit], select {
     font-family: 'Poppins', sans-serif;
 }
 textarea {

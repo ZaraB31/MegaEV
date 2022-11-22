@@ -1,407 +1,251 @@
-/*Header Styling*/
+/* Header styling */
 header {
-    background-color: #3C96C4;
-    width: 13vw;
-    height: 100vh;
-    min-width: 125px;
-    float: left;
-    position: fixed;
+    background-color: #B9B7BD;
 }
-header nav ul {
+header nav ul{
+    display: inline-flex;
+    width: 85%;
+    margin: 0 7.5%;
+    justify-content: space-between;
+    text-align: center;
+}
+header nav ul a {
+    padding: 20px 10px;
+}
+header nav ul a:hover {
+    background-color: #868B8E;
+    color: #EEEDE7;
+}
+
+/* body styling */
+.content {
+    width: 85%;
+    margin: 0 7.5% 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content .backButton {
     margin-top: 20px;
 }
-header nav ul li {
-    padding: 15px 0;
-    text-align: center;
-    font-size: 1.1em;
+
+.content .title, .content .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-header nav ul li:hover {
-    background-color: #30789D;
+.content .title h1 {
+    margin-top: 20px;
 }
-header nav ul a.dropdown-item {
-    position: absolute;
-    bottom: 20px;
+.content .title button, .content .buttons button{
+    background-color: #FFAD96;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1em;
+}
+.content .buttons button{
+    width: 25%;
+}
+
+.content .fullWidth {
     width: 100%;
 }
 
-/*Main styling*/
-main {
-    float: right;
-    width: 80vw;
-    margin: 20px 3.5vw;
+.content .center {
+    width: 67%;
+    padding-right: 3%;
 }
-section {
-    float: left;
+.content .center textarea {
     width: 100%;
-}
-aside {
-    float: right;
-}
-section.table {
-    width: 63%;
-    margin-right: 4%;
-}
-section.form {
-    width: 30%;
-    background-color: #3C96C4;
-    padding: 1%;
-    margin-top: 30px;
-}
-table {
-    width: 100%;
-    margin-top: 30px;
-    border-collapse: collapse;
-}
-table tr th {
-    background-color: #3C96C4;
-    text-align: left;
-    padding: 10px;
-    font-size: 18px;
-    border: 2px solid #3C96C4;
-}
-table tr td {
-    background-color: #F3F3F3;
-    padding: 10px;
-    border: 2px solid #95a1ae;
-    border-top: none;
-}
-table tr td i {
-    margin: 5px;
-    font-size: 18px;
-}
-.halfTable {
-    width: 47%;
-    float: left;
-    margin-right: 3%;
-}
-form input, form textarea, form select{
-    width: 94%;
-    border: 2px solid #3C96C4;
-    margin-bottom: 5px;
-    padding: 4px 8px;
-    font-size: 16px;
-}
-form textarea {
-    height: 150px;
-    font-family: 'Poppins', sans-serif;
-}
-form input[type=submit] {
     border: none;
-    background-color: #D2691E;
-    width: 50%;
-    float: right;
-    padding: 8px 12px;
-    margin-top: 10px;
 }
-form input[type=submit]:hover {
+.content .center img {
+    width: 100%;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.gallery a {
+    width: 21%;
+    height: 175px;
+    margin-bottom: 20px;
+}
+.gallery a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*Aside sections styling */
+.content aside{
+    width: 30%;
+}
+.content aside article {
+    background-color: #B9B7BD;
+    width: 85%;
+    margin: 0 2.5% 20px 2.5%;
+    padding: 5%;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.content aside article h2 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+.content aside article button, .content aside article form input[type=submit] {
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    background-color: #FFAD96;
+    padding: 5px 0;
+    font-size: 1em;
+}
+.content aside article form {
+    padding-bottom: 45px;
+    width: 100%;
+}
+.content aside article form input, .content aside article form textarea, .content aside article form select {
+    width: 95%;
+}
+.content aside article form textarea {
+    height: 150px;
+}
+.content aside article form input[type=checkbox] {
+    width: max-content;
+}
+.content aside article img {
+    width: 100%;
+}
+.content aside article .tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+.content aside article .tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #FFAD96;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 2px;
+}
+.content aside article .tag p {
+    margin: 0;
+}
+.content aside article .tag a {
+    margin-left: 3px;
+}
+
+/*Table Styling */
+.content table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.content table tr th {
+    background-color: #B9B7BD;
+    font-size: 1.2em;
+    padding: 8px 5px;
+    border: 1px solid #B9B7BD;
+    font-family: 'Roboto', sans-serif;
+}
+.content table tr td {
+    background-color: #EEEDE7;
+    border: 1px solid #B9B7BD;
+    border-top: none;
+    padding: 5px;
+    font-size: 1em;
+}
+.content table tr form input {
+    width: 75%;
+    margin: 0;
+}
+.content table tr form input[type=submit] {
+    padding: 4px 0;
+    width: 20%;
+    margin: 0;
+}
+
+/*Form Styling */
+.content form label, .content form input, .content form textarea{
+    width: 98.5%;
+    font-size: 1em;
+}
+.content form select {
+    font-size: 1em;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.content form input, .content form textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.content form textarea {
+    height: 40vh;
+}
+.content form input[type=submit], .content .cancel {
+    width: 25%;
+    border: none;
+    padding: 8px 0;
+}
+.content form input[type=submit] {
+    float: right;   
+    background-color: #FFAD96; 
+}
+.content form input[type=submit]:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+.content .cancel {
+    background-color: #868B8E;
+    font-size: 1em;
 }
 
 .hiddenForm {
-    background-color: #D2691E;
-    width: fit-content;
-    padding: 30px 50px;
+    background-color: #868B8E;
+    width: 60%;
+    height: max-content;
+    max-height: 70vh;
+    overflow-y: auto;
     position: fixed;
-    width: 50vw;
-    left: 22%;
-    max-height: 65vh;
-    overflow-y: scroll;
-}
-.hiddenForm form {
-    width: 100%;
-    padding-bottom: 55px;
-}
-.hiddenForm input {
-    width: 100%;
-    border: 1px solid #D2691E;
-}
-.hiddenForm i {
-    font-size: 24px;
-    float: right;
-}
-.hiddenForm i:hover {
-    cursor: pointer;
-    color: #D7D5D3
+    left: 20%;
+    top: 15vh;
 }
 .hiddenForm h2 {
-    margin: 0;
-    margin-bottom: 10px;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+.hiddenForm a {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.hiddenForm i {
+    font-size: 1.4em;
+}
+.hiddenForm form {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 20px;
 }
 .hiddenForm form label {
-    font-size: 20px;
+    font-size: 1.1em
+}
+.hiddenForm form input, .hiddenForm form textarea, .hiddenForm form select {
+    width: 100%;
+    font-size: 1em;
+    margin-bottom: 10px;
+    padding: 5px;
 }
 .hiddenForm form input[type=submit] {
-    width: 40%;
-    float: right;
-    margin-top: 10px;
-    background-color: #3C96C4;
-    border: 1px solid #3C96C4;
+    width: 102%;
     border: none;
+    background-color: #FFAD96;
 }
 .hiddenForm form input[type=submit]:hover {
-    text-decoration: underline;
     cursor: pointer;
-    background-color: #546979;
-}
-
-.hiddenForm.deleteForm {
-    background-color: white;
-    overflow: hidden;
-    text-align: center;
-    border: 10px solid #D01110;
-}
-.hiddenForm.deleteForm section {
-    display: flex;
-    width: 80%;
-    margin-left: 10%;
-    justify-content: space-between;
-}
-.hiddenForm.deleteForm .cancelButton, .hiddenForm.deleteForm section form input[type=submit] {
-    width: 35%;
-}
-.hiddenForm.deleteForm section .cancelButton {
-    height: fit-content;
-    margin-top: 10px;    
-    border: none;
-    font-size: 16px;
-    padding: 8px 12px;
-    background-color: #B9B7BD;
-}
-.hiddenForm.deleteForm section form input[type=submit] {
-    background-color: #D01110;
-    color: white;
-}
-.fullPageForm {
-    width: 90%;
-    margin-left: 5%;
-}
-.fullPageForm input, .fullPageForm textarea, .fullPageForm select {
-    width: 97%;
-}
-.fullPageForm #content {
-    height: 250px;
-}
-.fullPageForm #details {
-    height: 60vh;
-}
-.fullPageForm input[type=submit], .fullPageForm .cancelButton {
-    width: 30%;
-    margin-bottom: 30px;
-}
-.fullPageForm .cancelButton {
-    background-color: #3C96C4;
-    border: none;
-    padding: 8px 12px;
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-.editButton, .deleteButton, .addButton {
-    font-size: 17px;
-    padding: 8px 12px;
-    width: 15%;
-    border: none;
-    background-color: #D2691E;
-}
-.deleteButton, .addButton {  
-    float: right;
-}
-.editButton {
-    background-color: #3C96C4;
-}
-.editButton:hover, .deleteButton:hover, .addButton:hover {
     text-decoration: underline;
-    cursor: pointer;
-}
-
-/*Dashboard Styling*/
-.dashboard {
-    display: grid;
-    grid-template-columns: 65% 30%;
-    column-gap: 5%;
-}
-.dashboard .side article {
-    background-color: #3C96C4;
-    padding: 4%;
-    margin-bottom: 10px;
-}
-.dashboard .side article form {
-    width: 90%;
-    margin-left: 5%;
-    padding-bottom: 60px;
-}
-.dashboard .side article ul{
-    margin-left: 7%;
-    font-size: 1.1em;
-}
-.dashboard .side article button {
-    background-color: #D2691E;
-    border: none;
-    width: 90%;
-    margin-left: 5%;
-    font-size: 1.1em;
-    padding: 8px 12px;
-    margin-top: 10px;
-}
-
-/*Gallery Page Styling*/
-.images {
-    display: flex;
-    flex-wrap: wrap;
-}
-.images img {
-    width: 175px;
-    height: 175px;
-    margin: 10px;
-    object-fit: cover;
-}
-/*Brands page styling*/
-section.details {
-    width: 65%;
-    min-height: 100vh;
-}
-.details textarea {
-    border: none;
-    width: 100%;
-    height: 350px;
-}
-aside.image, aside.draft {
-    width: 30%;
-    background-color: #3C96C4;
-    margin-bottom: 30px;
-}
-aside.image h2, aside.draft h2 {
-    margin: 10px 12px;
-}
-aside.image img {
-    width: 80%;
-    margin-left: 10%;
-    margin-bottom: 10px;
-}
-aside.image button, aside.draft input[type=submit] {
-    background-color: #D2691E;
-    width: 80%;
-    margin-left: 10%;
-    border: none;
-    font-size: 17px;
-    padding: 8px 12px;
-    margin-bottom: 10px;
-}
-aside.draft input[type=submit] {
-    margin: 10px 10%;
-    margin-bottom: 15px;
-}
-aside.image form {
-    width: 80%;
-    margin-left: 10%;
-    padding-bottom:55px;
-    margin-bottom: 20px;
-}
-aside.image form input {
-    width: 100%;
-}
-section.buttons {
-    width: 100%;
-    margin: 20px 0;
-}
-.backButton {
-    font-size: 17px;
-    margin-bottom: 10px;
-    width: 100%;
-}
-form.studyGallery input[type=checkbox], form.articleTags input[type=checkbox] {
-    width: auto;
-}
-.tagContainer {
-    width: 80%;
-    margin-left: 10%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.tag {
-    display: inline-flex;
-    padding: 3px 6px;
-    margin-bottom: 8px;
-    background-color: #D2691E;
-    border-radius: 8px;
-    margin-right: 4px;
-}
-.tag p {
-    margin: 0;
-}
-.tag i {
-    margin-top: 5px;
-    margin-left: 10px; 
-}
-.tag i:hover {
-    font-size: 18px;
-    margin-top: 5px;
-}
-.tagDisplay {
-    height: 150px;
-    overflow-y: scroll;
-}
-.gallery {
-    height: 300px;
-    overflow: auto;
-    margin-bottom: 20px;
-    margin-right: 10px;
-}
-
-/*Enquiry index styling*/
-.enquiries table tr.hidden {
-    display: none; 
-}
-.enquiries table tr.hidden.open {
-    display: table-row;
-}
-.enquiries table tr.hidden td {
-    background-color: white;
-}
-.enquiries table .fa-solid.fa-chevron-down.animate {
-    transform: rotate(180deg);
-}
-
-/*Tag table styling*/
-.tagTable tr.hidden {
-    display: none;
-}
-.tagTable tr.hidden.open {
-    display: table-row;
-}
-.tagTable tr td form input {
-    width: 60%;
-}
-.tagTable tr td form input[type=submit] {
-    width: 30%;
-    margin: 0;
-    padding: 2px;
-    float: right;
-}
-
-/* Case study gallery update styling*/
-.currentGallery {
-    display: flex;
-    flex-wrap: wrap;
-}
-.updateGalleryImage {
-    width: 30%;
-    margin-right: 1%;
-}
-.updateGalleryImage img {
-    width: 100%;
-    max-height: 125px;
-    object-fit: cover;
-}
-.updateGalleryImage i{
-    background-color: #3C96C4;
-    padding: 8px;
-    border-radius: 20px;
-    position: relative;
-    left: 10px;
-    top: 30px;
-}
-.updateGalleryImage i:hover {
-    color: slategray;
 }

@@ -10,27 +10,19 @@ function tableOpen(name) {
     var c = document.getElementById(z);
     var d = document.getElementById(i);
 
-    if(a.className === 'hidden') {
-        a.className += ' open';
-    } else {
-        a.className = 'hidden';
-    }
-
-    if(b.className === 'hidden') {
-        b.className += ' open';
-    } else {
-        b.className = 'hidden';
-    }
-
-    if(c.className === 'hidden') {
-        c.className += ' open';
-    } else {
-        c.className = 'hidden';
+    if(a.style.display === 'none' && b.style.display === 'none' && c.style.display === 'none') {
+        a.style.display = 'table-row';
+        b.style.display = 'table-row';
+        c.style.display = 'table-row';
+    } else if(a.style.display === 'table-row' && b.style.display === 'table-row' && c.style.display === 'table-row'){
+        a.style.display = 'none';
+        b.style.display = 'none';
+        c.style.display = 'none';
     }
 
     if(d.className === 'fa-solid fa-chevron-down') {
-        d.className += ' animate';
-    } else {
+        d.className = 'fa-solid fa-chevron-up';
+    } else if(d.className === 'fa-solid fa-chevron-up'){
         d.className = 'fa-solid fa-chevron-down';
     }
 };

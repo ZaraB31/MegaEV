@@ -3,34 +3,39 @@
 @section('title', 'Articles Dashboard')
 
 @section('content')
-<h1>Articles</h1>
-<button class="addButton"><a href="{{ route('createArticle') }}">Add new Article</a></button>
-<section>
-    <table class="halfTable">
-        <tr>
-            <th>Published Articles</th>
-        </tr>
-        @foreach($articles as $article)
-        @if($article->draft === 1)
-            <tr>
-                <td><a href="/admin/articles/{{$article->id}}">{{$article->name}} <i class="fa-solid fa-arrow-right"></i></a></td>
-            </tr>
-        @endif
-        @endforeach
-    </table>
+<section class="content">
+    <article class="title">
+        <h1>Articles</h1>
+        <button class="addButton"><a href="{{ route('createArticle') }}">Add new Article</a></button>
+    </article>
 
-    <table class="halfTable">
-        <tr>
-            <th>Draft Articles</th>
-        </tr>
-        @foreach($articles as $article)
-        @if($article->draft === 0)
+    <article class="fullWidth">
+        <table>
             <tr>
-                <td><a href="/admin/articles/{{$article->id}}">{{$article->name}} <i class="fa-solid fa-arrow-right"></i></a></td>
+                <th>Draft Articles</th>
             </tr>
-        @endif
-        @endforeach
-    </table>
+            @foreach($articles as $article)
+            @if($article->draft === 0)
+                <tr>
+                    <td><a href="/admin/articles/{{$article->id}}">{{$article->name}} <i class="fa-solid fa-arrow-right"></i></a></td>
+                </tr>
+            @endif
+            @endforeach
+        </table>
+
+        <table>
+            <tr>
+                <th>Published Articles</th>
+            </tr>
+            @foreach($articles as $article)
+            @if($article->draft === 1)
+                <tr>
+                    <td><a href="/admin/articles/{{$article->id}}">{{$article->name}} <i class="fa-solid fa-arrow-right"></i></a></td>
+                </tr>
+            @endif
+            @endforeach
+        </table>    
+    </article>
 </section>
 
 @endsection

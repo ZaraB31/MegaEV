@@ -1,9 +1,9 @@
 function editTag(id) {
     var x = document.getElementById(id);
 
-    if (x.className === 'hidden') {
-        x.className += ' open';
-    } else {
-        x.className = 'hidden';
+    if (x.style.display === 'none') {
+        x.style.display = 'table-row';
+    } else if (x.style.display === 'table-row') {
+        x.style.display = 'none';
     }
 }

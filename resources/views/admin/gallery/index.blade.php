@@ -3,8 +3,19 @@
 @section('title', 'Gallery Dashboard')
 
 @section('content')
-<h1>Gallery</h1>
-<button onClick="openForm()" class="addButton">Add Image</button>
+<section class="content">
+    <article class="title">
+        <h1>Gallery</h1>
+        <button onClick="openForm()" class="addButton">Add Image</button>
+    </article>
+
+    <article class="fullWidth gallery">
+        @foreach($images as $image)
+            <a href="/admin/gallery/{{$image->id}}"><img src="/uploads/images/{{$image->file}}" alt="{{$image->description}}"></a>
+        @endforeach
+    </article>
+</section>
+
 
 <div class="hiddenForm" id="hiddenForm" style="display:none;">
     <a onClick="closeForm()"><i class="fa-solid fa-xmark"></i></a> 
@@ -25,11 +36,5 @@
         <input type="submit" value="Upload">
     </form>
 </div>
-
-<section class="images">
-    @foreach($images as $image)
-        <a href="/admin/gallery/{{$image->id}}"><img src="/uploads/images/{{$image->file}}" alt="{{$image->description}}"></a>
-    @endforeach
-</section>
 
 @endsection

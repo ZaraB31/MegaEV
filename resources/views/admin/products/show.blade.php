@@ -3,44 +3,53 @@
 @section('title', $product->name)
 
 @section('content')
-<div class="backButton">
-    <a  href="/admin/products"><i class="fa-solid fa-arrow-left"></i> Back</a>
-</div>
-<section class="details">
-    <h1>{{$product->name}}</h1>
-    <p><span>Brand:</span> {{$product->brand->name}}</p>
-    <p>{{$product->details}}</p>
-    <p>Price Range: {{$product->priceRange}}</p>
-</section>
 
-<aside class="image">
-    <h2>Product Image</h2>
-    @if (isset($productImage))
-        <img src="/uploads/images/{{$productImage->image->file}}" alt="{{$productImage->image->description}}">
-        <button onClick="openForm()">Update Logo</button>
-    @else
-        <form action="{{ route('assignProductImage') }}" method="post">
-            @csrf
-            @include('includes.error')
+<section class="content">
+    <div class="backButton">
+        <a  href="/admin/products"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
 
-            <input id="product_id" name="product_id" type="text" value="{{$product->id}}" style="display:none;">
+    <article class="title">
+        <h1>{{$product->name}}</h1>
+    </article>
 
-            <label for="image_id">Select image:</label>
-            <select name="image_id" id="image_id">
-                <option value="">Select...</option>
-                @foreach($images as $image)
-                <option value="{{$image->id}}">{{$image->name}}</option>
-                @endforeach
-            </select>
+    <article class="center">
+        <p style="margin-top:0;"><span>Brand:</span> {{$product->brand->name}}</p>
+        <p>{{$product->details}}</p>
+        <p>Price Range: {{$product->priceRange}}</p>
+    </article>
 
-            <input type="submit" value="Save">
-        </form>
-        @endif
-</aside>
+    <aside>
+        <article>
+            <h2>Product Image</h2>
+            @if (isset($productImage))
+                <img src="/uploads/images/{{$productImage->image->file}}" alt="{{$productImage->image->description}}">
+                <button onClick="openForm()">Update Logo</button>
+            @else
+                <form action="{{ route('assignProductImage') }}" method="post">
+                    @csrf
+                    @include('includes.error')
 
-<section class="buttons">
-    <button class="editButton"><a href="/admin/product/{{$product->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
-    <button class="deleteButton" onClick="openSecondForm()"><i class="fa-solid fa-trash-can"></i>  Delete</button>
+                    <input id="product_id" name="product_id" type="text" value="{{$product->id}}" style="display:none;">
+
+                    <label for="image_id">Select image:</label>
+                    <select name="image_id" id="image_id">
+                        <option value="">Select...</option>
+                        @foreach($images as $image)
+                        <option value="{{$image->id}}">{{$image->name}}</option>
+                        @endforeach
+                    </select>
+
+                    <input type="submit" value="Save">
+                </form>
+            @endif
+        </article>
+    </aside>
+
+    <article class="buttons">
+        <button class="editButton"><a href="/admin/product/{{$product->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
+        <button class="deleteButton" onClick="openSecondForm()"><i class="fa-solid fa-trash-can"></i>  Delete</button>
+    </article>
 </section>
 
 @if(isset($productImage))

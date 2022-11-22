@@ -30,7 +30,6 @@ Route::get('/terms', [App\Http\Controllers\ViewController::class, 'terms']);
 
 /*Admin Routes*/
 Route::get('/admin', [App\Http\Controllers\DashboardController::class, 'index']);
-Route::get('/admin/user/{id}', [App\Http\Controllers\DashboardController::class, 'showUser'])->name('showUser');
 Route::post('/admin/details/create', [App\Http\Controllers\DashboardController::class, 'createDetails'])->name('createDetails');
 Route::post('/admin/details/{id}/edit', [App\Http\Controllers\DashboardController::class, 'updateDetails'])->name('updateDetails');
 Route::post('/admin/socials/create', [App\Http\Controllers\DashboardController::class, 'createSocials'])->name('createSocials');

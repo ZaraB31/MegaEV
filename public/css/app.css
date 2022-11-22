@@ -9,7 +9,7 @@ main {
 }
 .breadcrumbs {
     font-size: 13px;
-    margin: 25px 0;
+    margin-top: 25px;
 }
 /*Home Page Styling*/
 .home {
@@ -365,6 +365,9 @@ main {
 }
 .article {
     width: 70%;
+}
+.article h1 {
+    margin-top: 0;
 }
 .otherArticles {
     width: 25%;

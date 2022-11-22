@@ -9,100 +9,106 @@
         x.style.height = x.scrollHeight + "px";
     }   
 </script>
+<section class="content">
+   <div class="backButton">
+        <a  href="/admin/caseStudies"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div> 
 
-<div class="backButton">
-    <a  href="/admin/caseStudies"><i class="fa-solid fa-arrow-left"></i> Back</a>
-</div>
+    <article class="title">
+        <h1>{{$study->name}}</h1>
+    </article>
 
-<section class="details">
-    <h1>{{$study->name}}</h1>
-    <textarea id="contentTextarea" readonly>{{$study->content}}</textarea>
+    <article class="center">
+        <textarea id="contentTextarea" readonly>{{$study->content}}</textarea>
 
-    <h2>Testimony</h2>
-    <p>{{$study->testimony}}</p>
-    <p>{{$study->testimonyAuthor}}</p>
-</section>
+        <h2>Testimony</h2>
+        <p>{{$study->testimony}}</p>
+        <p>{{$study->testimonyAuthor}}</p>
+    </article>
 
-<aside class="draft">
-    @if($study->draft === 0)
-        <h2>This case study is a draft</h2>
-        <form action="{{ route('publishStudy') }}" method="post">
-            @csrf
-            @include('includes.error')
-            <input type="text" name="id" value="{{$study->id}}" style="display:none;">
-            <input type="submit" value="Publish Case Study">
-        </form>
-    @elseif($study->draft === 1)
-        <h2>This case study is published</h2>
-        <form action="{{ route('unpublishStudy') }}" method="post">
-            @csrf
-            @include('includes.error')
-            <input type="text" name="id" value="{{$study->id}}" style="display:none;">
-            <input type="submit" value="Return to draft">
-        </form>
-    @endif
-</aside>
+    <aside>
+        <article>
+        @if($study->draft === 0)
+            <h2>This case study is a draft</h2>
+            <form action="{{ route('publishStudy') }}" method="post">
+                @csrf
+                @include('includes.error')
+                <input type="text" name="id" value="{{$study->id}}" style="display:none;">
+                <input type="submit" value="Publish Case Study">
+            </form>
+        @elseif($study->draft === 1)
+            <h2>This case study is published</h2>
+            <form action="{{ route('unpublishStudy') }}" method="post">
+                @csrf
+                @include('includes.error')
+                <input type="text" name="id" value="{{$study->id}}" style="display:none;">
+                <input type="submit" value="Return to draft">
+            </form>
+        @endif
+        </article>
 
-<aside class="image">
-    <h2>Featured Image</h2>
-    @isset($featuredImage)
-        <img src="/uploads/images/{{$featuredImage->image->file}}" alt="{{$featuredImage->image->description}}">
-        <button onClick="openForm()">Update image</button>
-    @else
-    <form action="{{ route('storeStudyFeaturedImage') }}" method="post">
-        @csrf
-        @include('includes.error')
+        <article>
+            <h2>Featured Image</h2>
+            @isset($featuredImage)
+                <img src="/uploads/images/{{$featuredImage->image->file}}" alt="{{$featuredImage->image->description}}">
+                <button onClick="openForm()">Update image</button>
+            @else
+            <form action="{{ route('storeStudyFeaturedImage') }}" method="post">
+                @csrf
+                @include('includes.error')
 
-        <label for="image_id">Select Image: </label>
-        <select name="image_id" id="image_id">
-            <option value="">Select...</option>
-            @foreach($images as $image)
-            <option value="{{$image->id}}">{{$image->name}}</option>
-            @endforeach
-        </select>
+                <label for="image_id">Select Image: </label>
+                <select name="image_id" id="image_id">
+                    <option value="">Select...</option>
+                    @foreach($images as $image)
+                    <option value="{{$image->id}}">{{$image->name}}</option>
+                    @endforeach
+                </select>
 
-        <input type="text" name="study_id" id="study_id" value="{{$study->id}}" style="display:none;">
+                <input type="text" name="study_id" id="study_id" value="{{$study->id}}" style="display:none;">
 
-        <input type="text" name="featured" id="featured" value=1 style="display:none;">
+                <input type="text" name="featured" id="featured" value=1 style="display:none;">
 
-        <input type="submit" value="Save">
-    </form>
-    @endisset
-</aside>
+                <input type="submit" value="Save">
+            </form>
+            @endisset
+        </article>
 
-<aside class="image">
-    <h2>Gallery</h2>
-    @if($galleryImages->count() > 0)
-        <div class="gallery">
-            @foreach($galleryImages as $galleryImage)
-                <img src="/uploads/images/{{$galleryImage->image->file}}" alt="{{$galleryImage->image->description}}">
-            @endforeach
-        </div>
-        <button>Update gallery</button>
-    @else
-        <form action="{{ route('storeStudygallery') }}" method="post" class="studyGallery">
+        <article>
+            <h2>Gallery</h2>
+            @if($galleryImages->count() > 0)
+                <div class="gallery">
+                    @foreach($galleryImages as $galleryImage)
+                        <img src="/uploads/images/{{$galleryImage->image->file}}" alt="{{$galleryImage->image->description}}">
+                    @endforeach
+                </div>
+                <button>Update gallery</button>
+            @else
+                <form action="{{ route('storeStudygallery') }}" method="post" class="studyGallery">
 
-        @csrf
-        @include('includes.error')
+                @csrf
+                @include('includes.error')
 
-        <p style="font-weight: bold; margin-bottom: 0.3em;">Select Images:</p>
-        @foreach($images as $image)
-        <div>
-            <input type="checkbox" name="image_id[]" id="image_id" value="{{$image->id}}">
-            <label for="image_id">{{$image->name}}</label>
-        </div>
-        @endforeach
+                <p style="font-weight: bold; margin-bottom: 0.3em;">Select Images:</p>
+                @foreach($images as $image)
+                <div>
+                    <input type="checkbox" name="image_id[]" id="image_id" value="{{$image->id}}">
+                    <label for="image_id">{{$image->name}}</label>
+                </div>
+                @endforeach
 
-        <input type="text" name="study_id" id="study_id" value="{{$study->id}}" style="display:none;">
+                <input type="text" name="study_id" id="study_id" value="{{$study->id}}" style="display:none;">
 
-        <input type="submit" value="Add images to gallery">
-        </form>
-    @endif
-</aside>
+                <input type="submit" value="Add images to gallery">
+                </form>
+            @endif
+        </article>
+    </aside>
 
-<section class="buttons">
-    <button class="editButton"><a href="/admin/caseStudies/{{$study->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
-    <button class="deleteButton" onClick="openSecondForm()"><i class="fa-solid fa-trash-can"></i>  Delete</button>
+    <article class="buttons">
+        <button class="editButton"><a href="/admin/caseStudies/{{$study->id}}/edit"><i class="fa-solid fa-pen-to-square"></i>  Edit</a></button>
+        <button class="deleteButton" onClick="openSecondForm()"><i class="fa-solid fa-trash-can"></i>  Delete</button>
+    </article>
 </section>
 
 @isset($featuredImage)
